@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
     <style>
         .badge {
             padding-left: 9px;
@@ -48,6 +50,10 @@
             color: white !important;
         }
 
+        ul li a:hover {
+            color: black !important;
+        }
+
         footer ul {
             direction: rtl;
             color: white;
@@ -66,20 +72,11 @@
             position: relative;
             box-shadow: 0px 3pt 6pt #00000033;
             background: url('./images/backgrounds/Header@3x.png');
-            background-size: 100%;
-            opacity: .95;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
-        /* footer::after {
-            content: "";
-            background: url('./images/icons/Header@3x.png');
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            position: absolute;
-            z-index: -1;
-        } */
         @font-face {
             font-family: 'Frutiger LT Arabic 65 Bold';
             font-style: normal;
@@ -164,7 +161,7 @@
             </div>
             <div class="carousel-item">
                 <img width="100%" height="100%" style="max-height:500px;"
-                    src="./images/backgrounds/mika-baumeister-PZao9UjlbMY-unsplash.jpg" alt="Second slide">
+                    src="./images/backgrounds/matthew-kwong-rQRKEu9HnZo-unsplash.jpg" alt="Second slide">
             </div>
             <div class="carousel-item">
                 <img width="100%" height="100%" style="max-height: 500px;"
@@ -489,6 +486,19 @@
             </div>
         </div>
     </div>
+    <div class="splide mb-5" style="padding: 50px;">
+        <div class="splide__track">
+            <ul class="splide__list">
+                <li class="splide__slide"><img width="100px" height="35" src="/images/icons/bitcoin@1X.png" alt=""></li>
+                <li class="splide__slide"><img width="100px" height="35" src="/images/icons/cashu@1X.png" alt=""></li>
+                <li class="splide__slide"><img width="70px" height="35" src="/images/icons/mastercard@1X.png" alt="">
+                </li>
+                <li class="splide__slide"><img width="100px" height="35" src="/images/icons/visa@1X.png" alt=""></li>
+                <li class="splide__slide"><img width="100px" height="35" src="/images/icons/paypal@1X.png" alt=""></li>
+                <li class="splide__slide"><img width="100px" height="35" src="/images/icons/perfect@1X.png" alt=""></li>
+            </ul>
+        </div>
+    </div>
     <footer class="container col-12">
         <div class="row pb-4">
             <div class="col-lg-4 col-md-12 mt-5">
@@ -560,5 +570,10 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+<script>
+    new Splide('.splide', {
+        fixedWidth: '20rem',
+    }).mount();
+</script>
 
 </html>
