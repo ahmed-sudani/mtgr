@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <style>
+        .badge {
+            padding-left: 9px;
+            padding-right: 9px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 9px;
+            border-radius: 10px;
+        }
+
+        .label-warning[href],
+        .badge-warning[href] {
+            background-color: #c67605;
+        }
+
+        #lblCartCount {
+            font-size: 12px;
+            background: #FF0000;
+            color: #fff;
+            padding: 0 5px;
+            vertical-align: top;
+            margin-left: -10px;
+        }
+
+        ol li {
+            background-color: #009dff !important;
+            border-radius: 100%;
+            width: 15px !important;
+            height: 15px !important;
+        }
+
+        ol .active {
+            background-color: white !important;
+            /* border: 2px solid #0090EB !important; */
+        }
+
+        ul li a {
+            color: white !important;
+        }
+
+        footer ul {
+            direction: rtl;
+            color: white;
+            font-weight: bold;
+            list-style-position: inside;
+        }
+        footer ul li{
+            padding-left: 0%!important;
+        }
+
+        footer {
+            /* background-color: #0C8DDD;
+            opacity: 60%; */
+            display: block;
+            position: relative;
+            box-shadow: 0px 3pt 6pt #00000033;
+            background: url('/images/backgrounds/Header@3x.png');
+            background-size: 100%;
+            opacity: .95;
+        }
+
+        /* footer::after {
+            content: "";
+            background: url('/images/icons/Header@3x.png');
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            z-index: -1;
+        } */
+        @font-face {
+            font-family: 'Frutiger LT Arabic 65 Bold';
+            font-style: normal;
+            font-weight: normal;
+            src: local('Frutiger LT Arabic 65 Bold'), url('/fonts/FrutigerLTArabic65Bold.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Frutiger LT Arabic 45 Light';
+            font-style: normal;
+            font-weight: normal;
+            src: local('Frutiger LT Arabic 45 Light'), url('/fonts/FrutigerLTArabic45Light.woff') format('woff');
+        }
+
+
+        * {
+            font-family: 'Frutiger LT Arabic 65 Bold';
+        }
+    </style>
+    <title>Home</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav text-white">
+                <a class="nav-link"><img height="40px" src="/images/icons/paymentsIconsNew@1X.png" alt=""></a>
+                <a class="nav-link"><img src="/images/icons/CompositeLayer@1X (1).png" alt=""></a>
+                <a class="nav-link"><i class="fa fa-shopping-cart fa-2x"
+                        style="background-color: white; padding: 5px; color: black;"></i>
+                    <span class="badge badge-warning" id="lblCartCount"> 5 </span></a>
+            </div>
+        </div>
+        <a class="navbar-brand" href="#"><img src="/images/لوجو متجر السوادن - white@2x.png" alt=""></a>
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button> -->
+    </nav>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ul class="nav justify-content-end col-11 pt-2 pb-2"
+            style=" background-color: #0090EB; left: 5%; right: 5%; position: absolute;z-index: 1; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;">
+
+            <li class="nav-item mr-2 ml-5">
+                <button class="btn bg-light pl-4 pr-4 text-primary">تسجيــل</button>
+            </li>
+            <li class="nav-item mr-auto">
+                <button class="btn bg-light pl-4 pr-4 text-primary">تسجيل الدخول</button>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link font-weight-bold" href="#">إتصل بنا <i class="fa fa-envelope" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link font-weight-bold" href="#">مشترياتي <i class="fa fa-shopping-cart"
+                        aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link font-weight-bold" href="#">من نحن <i class="fa fa-users" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link font-weight-bold" href="#">الرئيسية <i class="fa fa-home" aria-hidden="true"></i></a>
+            </li>
+        </ul>
+        <ol class="carousel-indicators mr-0 ml-0 mb-0">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img width="100%" height="500px" src="/images/backgrounds/40239@3x.png" alt="First slide">
+                <div class="carousel-caption"
+                    style="background-color: rgba(241, 241, 241, 0.7);left: 0%;right: 0%; bottom: 0%;">
+                    <h1 style=" color: black;font-size: 5vw;" class="col-12">
+                        بوابة الدفع الآمنة <span style="color: #0090EB;">عبر اﻹنترنت</span></h1>
+                    <p></p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img width="100%" height="500px" src="/images/backgrounds/mika-baumeister-PZao9UjlbMY-unsplash.jpg"
+                    alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img width="100%" height="500px" src="/images/backgrounds/rupixen-com-Q59HmzK38eQ-unsplash.jpg"
+                    alt="Third slide">
+            </div>
+        </div>
+        <a class="carousel-control-prev mt-5" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span style="border-radius: 10px; padding: 20px;background-size: 50%; background-color: #0090EB;"
+                class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next mt-5" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span style="border-radius: 10px; padding: 20px;background-size: 50%; background-color: #0090EB;"
+                class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <div style="background-color: #0090EB;height: 15px;" class="col-12"></div>
+    <div class="container col-12 mt-5 pl-5 pr-5">
+        <h4 style="color: #009dff; border-right: #0090EB solid 5px;" class="col text-right">الأكثر مبيعاً</h4>
+        <div class="row justify-content-between">
+            <div class="col">
+                <div class="shadow p-3 mb-5 bg-white rounded"
+                    style="height: 200px; padding: 0%!important; background-image: linear-gradient(to bottom, #FFFFFF, #EEEDEB); box-shadow: -1pt 0px 6pt #00000029;">
+                    <img style="position: absolute; left: -.01rem; top: -15px;" src="/images/icons/Layer 6@1X.png"
+                        class="mr-auto ml-auto" alt="">
+                    <div class="col text-center">
+                        <img src="/images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
+                    </div>
+
+                    <div class="col text-center mt-5">
+                        <img src="/images/icons/perfect@1X.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="shadow p-3 mb-5 bg-white rounded"
+                    style="height: 200px; padding: 0%!important; background-image: linear-gradient(to bottom, #FFFFFF, #EEEDEB); box-shadow: -1pt 0px 6pt #00000029; ">
+                    <img style="position: absolute; left: -.01rem; top: -15px;" src="/images/icons/Layer 6@1X.png"
+                        class="mr-auto ml-auto" alt="">
+
+                    <div class="col text-center">
+                        <img src="/images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
+                    </div>
+                    <div class="col text-center mt-5">
+                        <img src="/images/icons/bitcoin@1X.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="shadow p-3 mb-5 bg-white rounded"
+                    style="height: 200px; padding: 0%!important; background-image: linear-gradient(to bottom, #FFFFFF, #EEEDEB); box-shadow: -1pt 0px 6pt #00000029; ">
+                    <img style="position: absolute; left: -.01rem; top: -15px;" src="/images/icons/Layer 6@1X.png"
+                        class="mr-auto ml-auto" alt="">
+
+                    <div class="col text-center">
+                        <img src="/images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
+                    </div>
+                    <div class="col text-center mt-5">
+                        <img src="/images/icons/visa@1X.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="shadow p-3 mb-5 bg-white rounded"
+                    style="height: 200px; padding: 0%!important; background-image: linear-gradient(to bottom, #FFFFFF, #EEEDEB); box-shadow: -1pt 0px 6pt #00000029; ">
+                    <img style="position: absolute; left: -.01rem; top: -15px;" src="/images/icons/Layer 6@1X.png"
+                        class="mr-auto ml-auto" alt="">
+
+                    <div class="col text-center">
+                        <img src="/images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
+                    </div>
+                    <div class="col text-center mt-5">
+                        <img src="/images/icons/cashu@1X.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="shadow p-3 mb-5 bg-white rounded"
+                    style="height: 200px; padding: 0%!important; background-image: linear-gradient(to bottom, #FFFFFF, #EEEDEB); box-shadow: -1pt 0px 6pt #00000029; ">
+                    <img style="position: absolute; left: -.01rem; top: -15px;" src="/images/icons/Layer 6@1X.png"
+                        class="mr-auto ml-auto" alt="">
+
+                    <div class="col text-center">
+                        <img src="/images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
+                    </div>
+                    <div class="col text-center mt-5">
+                        <img src="/images/icons/mastercard@1X.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h4 style="color: #009dff; border-right: #0090EB solid 5px;" class="col text-right">جميع الفئات</h4>
+        <div class="row justify-content-between">
+            <div class="col">
+                <div class="shadow p-3 mb-5 bg-white rounded"
+                    style="height: 200px; padding: 0%!important; background-image: linear-gradient(to bottom, #FFFFFF, #EEEDEB); box-shadow: -1pt 0px 6pt #00000029;">
+                    <div class="col text-center">
+                        <img src="/images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
+                    </div>
+                    <div class="col text-center mt-5">
+                        <img src="/images/icons/bitcoin@1X.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="shadow p-3 mb-5 bg-white rounded"
+                    style="height: 200px; padding: 0%!important; background-image: linear-gradient(to bottom, #FFFFFF, #EEEDEB); box-shadow: -1pt 0px 6pt #00000029;">
+                    <div class="col text-center">
+                        <img src="/images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
+                    </div>
+                    <div class="col text-center mt-5">
+                        <img src="/images/icons/visa@1X.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="shadow p-3 mb-5 bg-white rounded"
+                    style="height: 200px; padding: 0%!important; background-image: linear-gradient(to bottom, #FFFFFF, #EEEDEB); box-shadow: -1pt 0px 6pt #00000029;">
+                    <div class="col text-center">
+                        <img src="/images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
+                    </div>
+                    <div class="col text-center mt-5">
+                        <img src="/images/icons/cashu@1X.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="shadow p-3 mb-5 bg-white rounded"
+                    style="height: 200px; padding: 0%!important; background-image: linear-gradient(to bottom, #FFFFFF, #EEEDEB); box-shadow: -1pt 0px 6pt #00000029; ">
+                    <div class="col text-center">
+                        <img src="/images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
+                    </div>
+                    <div class="col text-center mt-5">
+                        <img src="/images/icons/mastercard@1X.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="shadow p-3 mb-5 bg-gray rounded"
+                    style="height: 200px; padding: 0%!important; background-image: linear-gradient(to bottom, #FFFFFF, #EEEDEB); box-shadow: -1pt 0px 6pt #00000029; ">
+                    <div class="col text-center">
+                        <img src="/images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
+                    </div>
+                    <div class="col text-center mt-5">
+                        <img src="/images/icons/paypal@1X.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-between">
+            <div class="col">
+                <div class="shadow p-3 mb-5 bg-white rounded"
+                    style="height: 200px; padding: 0%!important; background-image: linear-gradient(to bottom, #FFFFFF, #EEEDEB); box-shadow: -1pt 0px 6pt #00000029;">
+                    <div class="col text-center">
+                        <img src="/images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
+                    </div>
+                    <div class="col text-center mt-5">
+                        <img src="/images/icons/bitcoin@1X.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="shadow p-3 mb-5 bg-white rounded"
+                    style="height: 200px; padding: 0%!important; background-image: linear-gradient(to bottom, #FFFFFF, #EEEDEB); box-shadow: -1pt 0px 6pt #00000029;">
+                    <div class="col text-center">
+                        <img src="/images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
+                    </div>
+                    <div class="col text-center mt-5">
+                        <img src="/images/icons/visa@1X.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="shadow p-3 mb-5 bg-white rounded"
+                    style="height: 200px; padding: 0%!important; background-image: linear-gradient(to bottom, #FFFFFF, #EEEDEB); box-shadow: -1pt 0px 6pt #00000029;">
+                    <div class="col text-center">
+                        <img src="/images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
+                    </div>
+                    <div class="col text-center mt-5">
+                        <img src="/images/icons/cashu@1X.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="shadow p-3 mb-5 bg-white rounded"
+                    style="height: 200px; padding: 0%!important; background-image: linear-gradient(to bottom, #FFFFFF, #EEEDEB); box-shadow: -1pt 0px 6pt #00000029; ">
+                    <div class="col text-center">
+                        <img src="/images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
+                    </div>
+                    <div class="col text-center mt-5">
+                        <img src="/images/icons/mastercard@1X.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="shadow p-3 mb-5 bg-gray rounded"
+                    style="height: 200px; padding: 0%!important; background-image: linear-gradient(to bottom, #FFFFFF, #EEEDEB); box-shadow: -1pt 0px 6pt #00000029; ">
+                    <div class="col text-center">
+                        <img src="/images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
+                    </div>
+                    <div class="col text-center mt-5">
+                        <img src="/images/icons/paypal@1X.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-between">
+            <div class="col">
+                <div class="shadow p-3 mb-5 bg-white rounded"
+                    style="height: 200px; padding: 0%!important; background-image: linear-gradient(to bottom, #FFFFFF, #EEEDEB); box-shadow: -1pt 0px 6pt #00000029;">
+                    <div class="col text-center">
+                        <img src="/images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
+                    </div>
+                    <div class="col text-center mt-5">
+                        <img src="/images/icons/bitcoin@1X.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="shadow p-3 mb-5 bg-white rounded"
+                    style="height: 200px; padding: 0%!important; background-image: linear-gradient(to bottom, #FFFFFF, #EEEDEB); box-shadow: -1pt 0px 6pt #00000029;">
+                    <div class="col text-center">
+                        <img src="/images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
+                    </div>
+                    <div class="col text-center mt-5">
+                        <img src="/images/icons/visa@1X.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="shadow p-3 mb-5 bg-white rounded"
+                    style="height: 200px; padding: 0%!important; background-image: linear-gradient(to bottom, #FFFFFF, #EEEDEB); box-shadow: -1pt 0px 6pt #00000029;">
+                    <div class="col text-center">
+                        <img src="/images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
+                    </div>
+                    <div class="col text-center mt-5">
+                        <img src="/images/icons/cashu@1X.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="shadow p-3 mb-5 bg-white rounded"
+                    style="height: 200px; padding: 0%!important; background-image: linear-gradient(to bottom, #FFFFFF, #EEEDEB); box-shadow: -1pt 0px 6pt #00000029; ">
+                    <div class="col text-center">
+                        <img src="/images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
+                    </div>
+                    <div class="col text-center mt-5">
+                        <img src="/images/icons/mastercard@1X.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="shadow p-3 mb-5 bg-gray rounded"
+                    style="height: 200px; padding: 0%!important; background-image: linear-gradient(to bottom, #FFFFFF, #EEEDEB); box-shadow: -1pt 0px 6pt #00000029; ">
+                    <div class="col text-center">
+                        <img src="/images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
+                    </div>
+                    <div class="col text-center mt-5">
+                        <img src="/images/icons/paypal@1X.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-between">
+            <div class="col">
+                <div class="shadow p-3 mb-5 bg-white rounded"
+                    style="height: 200px; padding: 0%!important; background-image: linear-gradient(to bottom, #FFFFFF, #EEEDEB); box-shadow: -1pt 0px 6pt #00000029;">
+                    <div class="col text-center">
+                        <img src="/images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
+                    </div>
+                    <div class="col text-center mt-5">
+                        <img src="/images/icons/bitcoin@1X.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="shadow p-3 mb-5 bg-white rounded"
+                    style="height: 200px; padding: 0%!important; background-image: linear-gradient(to bottom, #FFFFFF, #EEEDEB); box-shadow: -1pt 0px 6pt #00000029;">
+                    <div class="col text-center">
+                        <img src="/images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
+                    </div>
+                    <div class="col text-center mt-5">
+                        <img src="/images/icons/visa@1X.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="shadow p-3 mb-5 bg-white rounded"
+                    style="height: 200px; padding: 0%!important; background-image: linear-gradient(to bottom, #FFFFFF, #EEEDEB); box-shadow: -1pt 0px 6pt #00000029;">
+                    <div class="col text-center">
+                        <img src="/images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
+                    </div>
+                    <div class="col text-center mt-5">
+                        <img src="/images/icons/cashu@1X.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="shadow p-3 mb-5 bg-white rounded"
+                    style="height: 200px; padding: 0%!important; background-image: linear-gradient(to bottom, #FFFFFF, #EEEDEB); box-shadow: -1pt 0px 6pt #00000029; ">
+                    <div class="col text-center">
+                        <img src="/images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
+                    </div>
+                    <div class="col text-center mt-5">
+                        <img src="/images/icons/mastercard@1X.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="shadow p-3 mb-5 bg-gray rounded"
+                    style="height: 200px; padding: 0%!important; background-image: linear-gradient(to bottom, #FFFFFF, #EEEDEB); box-shadow: -1pt 0px 6pt #00000029; ">
+                    <div class="col text-center">
+                        <img src="/images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
+                    </div>
+                    <div class="col text-center mt-5">
+                        <img src="/images/icons/paypal@1X.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 p-3" style="background-color: #0090EB;">
+        <h1 style="font-size: 1.5rem;" class="text-white text-center mb-0">جميع الحقوق محفوظة للمتجر السودانى 2019 -
+            2020
+        </h1>
+    </div>
+    <footer class="container col-12">
+        <div class="row pb-4">
+            <div class="col mt-5">
+                <div class="col p-0">
+                    <h5 class="ml-auto" style="color: white; width: fit-content;">
+                        روابط ذات صلة
+                    </h5>
+                </div>
+                <ul class="row text-right p-0 mt-4">
+                    <li class="col-4 mt-1"><a href="">رابط نصي</a></li>
+                    <li class="col-4 mt-1"><a href="">رابط نصي</a></li>
+                    <li class="col-4 mt-1"><a href="">رابط نصي</a></li>
+                    <li class="col-4 mt-2"><a href="">رابط نصي</a></li>
+                    <li class="col-4 mt-2"><a href="">رابط نصي</a></li>
+                    <li class="col-4 mt-2"><a href="">رابط نصي</a></li>
+                    <li class="col-4 mt-2"><a href="">رابط نصي</a></li>
+                    <li class="col-4 mt-2"><a href="">رابط نصي</a></li>
+                    <li class="col-4 mt-2"><a href="">رابط نصي</a></li>
+                </ul>
+            </div>
+            <div class="col mt-5 text-right text-white">
+                <div class="col">
+                    <img width="220px" src="/images/لوجو متجر السوادن - white@3x.png" alt="">
+                </div>
+                <div class="col mt-2">
+                    <h5>... تابعونا</h5>
+                </div>
+                <div class="col">
+                    <i style="padding: 5px;color: rgb(255, 255, 255);" class="fa fa-facebook fa-lg"
+                        aria-hidden="true"></i>
+                    <i style="padding: 5px; color: rgb(255, 255, 255);" class="fa fa-twitter fa-lg"
+                        aria-hidden="true"></i>
+                    <i style="padding: 5px; color: rgb(255, 255, 255);" class="fa fa-instagram fa-lg"
+                        aria-hidden="true"></i>
+                    <i style="padding: 5px; color: rgb(255, 255, 255);" class="fa fa-telegram fa-lg"
+                        aria-hidden="true"></i>
+                    <i style="padding: 5px;  color: rgb(255, 255, 255);" class="fa fa-youtube fa-lg"
+                        aria-hidden="true"></i>
+                    <i style="padding: 5px;  color: rgb(255, 255, 255);" class="fa fa-whatsapp fa-lg"
+                        aria-hidden="true"></i>
+                    <i style="padding: 5px; color: rgb(255, 255, 255);" class="fa fa-envelope fa-lg"
+                        aria-hidden="true"></i>
+                    <i style="padding: 5px;  color: rgb(255, 255, 255);" class="fa fa-snapchat fa-lg"
+                        aria-hidden="true"></i>
+
+                </div>
+                <div class="row col p-0 mt-3 justify-content-end">
+                    <a href=""><img class="mr-2" width="130px" height="50px" src="/images/icons/getgoogleplay.png"
+                            alt=""></a>
+                    <a href=""><img width="130px" height="50px" src="/images/icons/getonplay.png" alt=""></a>
+                </div>
+                <div class="col mt-3">
+                    <h1 style="font-size: 1rem;" class="text-white text-right mb-0">جميع الحقوق محفوظة للمتجر
+                        السودانى 2019 -
+                        2020
+                    </h1>
+                </div>
+            </div>
+            <div class="col-1">
+                <button onclick="window.scroll(0, 0)" class="btn"
+                    style="position: absolute; bottom: 0%;background-color: #0090EB;"><i
+                        class="fa text-white fa-arrow-up" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+</html>
