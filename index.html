@@ -11,6 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <script src="/bootstrap.min.js"></script>
     <style>
         .badge {
             padding-left: 9px;
@@ -71,10 +72,12 @@
             display: block;
             position: relative;
             box-shadow: 0px 3pt 6pt #00000033;
-            background: url('./images/backgrounds/Header@3x.png');
+            /* background: url('./images/backgrounds/Header@3x.png'); */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            background-color: #0761a1;
+            opacity: .99;
         }
 
         @font-face {
@@ -91,33 +94,166 @@
             src: local('Frutiger LT Arabic 45 Light'), url('./fonts/FrutigerLTArabic45Light.woff') format('woff');
         }
 
+        li .is-active {
+            background-color: #0090EB !important;
+        }
+
+        .splide__arrow,
+        .splide__arrow--prev {
+            background-color: #0090EB;
+        }
+
+        .splide__pagination {
+            display: none;
+        }
 
         * {
             font-family: 'Frutiger LT Arabic 65 Bold';
+        }
+
+        #slideMen {
+            background-color: #0090EB;
+            position: fixed;
+            z-index: 1;
+            top: 0px;
+            right: 0px;
+            width: 50%;
+            bottom: 20%;
+
+        }
+
+        @media (max-width: 992px) {
+            .navbar-collapse {
+                position: fixed;
+                top: 0px;
+                right: 0;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-bottom: 15px;
+                width: 75%;
+                height: 100%;
+                background-color: #2c6e9c !important;
+            }
+
+            .navbar-collapse.collapsing {
+                right: -75%;
+                transition: height 0s ease;
+            }
+
+            .navbar-collapse.show {
+                right: 0;
+                transition: right 300ms ease-in-out;
+            }
+
+            .navbar-toggler.collapsed~.navbar-collapse {
+                transition: right 500ms ease-in-out;
+            }
         }
     </style>
     <title>Home</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-dark">
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav text-white">
-                <a class="nav-link"><img height="40px" src="./images/icons/paymentsIconsNew@1X.png" alt=""></a>
-                <a class="nav-link"><img src="./images/icons/CompositeLayer@1X (1).png" alt=""></a>
-                <a class="nav-link"><i class="fa fa-shopping-cart fa-2x"
-                        style="background-color: white; padding: 5px; color: black;"></i>
-                    <span class="badge badge-warning" id="lblCartCount"> 5 </span></a>
-            </div>
-        </div>
-        <a class="navbar-brand" href="#"><img src="./images/لوجو متجر السوادن - white@2x.png" alt=""></a>
-        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark d-lg-none p-0">
+        <!-- <a class="navbar-brand" href="">Brand</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button> -->
+        <div class="collapse navbar-collapse bg-dark p-0" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto text-right pr-3">
+                <li class="nav-item text-left">
+                    <a data-toggle="collapse" data-target="#navbarCollapse" style="width: fit-content;"
+                        class="nav-link font-weight-bold" href="#"><i
+                            class="fa fa-arrow-right rounded bg-white pr-3 pl-3 pt-1 pb-1 fa-lg" style="color: #0090EB;"
+                            aria-hidden="true"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold" href="#">الرئيسية <i class="fa fa-home fa-lg"
+                            aria-hidden="true"></i></a>
+                </li>
+                <li class="nav-item border-top">
+                    <a class="nav-link font-weight-bold" href="#">من نحن <i class="fa fa-users fa-lg"
+                            aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li class="nav-item border-top">
+                    <a class="nav-link font-weight-bold" href="#">مشترياتي <i class="fa fa-shopping-cart fa-lg"
+                            aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li class="nav-item border-top border-bottom">
+                    <a class="nav-link font-weight-bold" href="#">إتصل بنا <i class="fa fa-envelope fa-lg"
+                            aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg" style="background-color: #0761a1;">
+        <div class="d-none d-lg-block">
+            <ul class="nav col-12 justify-content-between" id="sm">
+                <li class="nav-item rounded mr-2"
+                    style="background-image: linear-gradient(to bottom, #FFFFFF, #E3E3E3);">
+                    <a class="nav-link"><img width="40px" src="./images/icons/visa@1X.png" alt=""></a>
+                </li>
+                <li class="nav-item rounded mr-2"
+                    style="background-image: linear-gradient(to bottom, #FFFFFF, #E3E3E3);">
+                    <a class="nav-link"><img width="40px" src="./images/icons/mastercard@1X.png" alt=""></a>
+                </li>
+                <li class="nav-item rounded mr-2"
+                    style="background-image: linear-gradient(to bottom, #FFFFFF, #E3E3E3);">
+                    <a class="nav-link"><img width="40px" src="./images/icons/bitcoin@1X.png" alt=""></a>
+                </li>
+                <li class="nav-item rounded mr-2"
+                    style="background-image: linear-gradient(to bottom, #FFFFFF, #E3E3E3);">
+                    <a class="nav-link"><img width="40px" src="./images/icons/perfect@1X.png" alt=""></a>
+                </li>
+                <li class="nav-item rounded" style="background-image: linear-gradient(to bottom, #FFFFFF, #E3E3E3);">
+                    <a class="nav-link"><img width="40px" src="./images/icons/cashu@1X.png" alt=""></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white!important;">نـحـن نـقـبـل</a>
+                </li>
+            </ul>
+        </div>
+        <a href="" class="text-white d-lg-none mt-2" style="font-size: 1rem;">تـسـجـيـل الـدخـول <i
+                class="fa fa-shopping-cart fa bg-white p-1 rounded ml-2" style="color: #0090EB;"></i></a>
+        <a class="navbar-brand ml-auto" href="#"><img width="150vw" src="./images/لوجو متجر السوادن - white@2x.png"
+                alt=""></a>
+        <button class="navbar-toggler mt-3 p-0" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <i id="barsBtn" class="fa fa-bars fa-lg text-white" aria-hidden="true"></i>
+        </button>
+        <ul class="nav mt-5 col-12 p-0 justify-content-between d-lg-none d-md-none d-sm-none"
+            style="flex-wrap: nowrap;">
+            <li class="nav-item rounded" style="background-image: linear-gradient(to bottom, #FFFFFF, #E3E3E3);">
+                <a class="nav-link"><img width="30px" src="./images/icons/visa@1X.png" alt=""></a>
+            </li>
+            <li class="nav-item rounded" style="background-image: linear-gradient(to bottom, #FFFFFF, #E3E3E3);">
+                <a class="nav-link"><img width="30px" src="./images/icons/mastercard@1X.png" alt=""></a>
+            </li>
+            <li class="nav-item rounded" style="background-image: linear-gradient(to bottom, #FFFFFF, #E3E3E3);">
+                <a class="nav-link"><img width="30px" src="./images/icons/bitcoin@1X.png" alt=""></a>
+            </li>
+            <li class="nav-item rounded" style="background-image: linear-gradient(to bottom, #FFFFFF, #E3E3E3);">
+                <a class="nav-link"><img width="30px" src="./images/icons/perfect@1X.png" alt=""></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link pl-0 pr-0" style="color: white!important;">نـحـن نـقـبـل</a>
+            </li>
+        </ul>
+        <div class="input-group mb-3  mt-3 d-md-none">
+            <div class="input-group-prepend">
+                <i class="fa fa-search fa-2x text-white pl-3 pr-3 pt-1 pb-1 rounded"
+                    style="background-image: linear-gradient(to top, #2D5797, #08172A); border: none;"></i>
+            </div>
+            <input style="height: 40px;" type="text" class="form-control text-right" placeholder="بحث متجر السودان"
+                aria-label="Username" aria-describedby="basic-addon1">
+        </div>
     </nav>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ul class="nav justify-content-end col-11 pt-2 pb-2"
+        <ul class="nav justify-content-end col-11 pt-2 pb-2 d-none d-lg-flex"
             style=" background-color: #0090EB; left: 5%; right: 5%; position: absolute;z-index: 1; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;">
 
             <li class="nav-item mr-2 ml-5">
@@ -486,20 +622,23 @@
             </div>
         </div>
     </div>
-    <div class="splide mb-5" style="padding: 50px;">
-        <div class="splide__track">
-            <ul class="splide__list">
-                <li class="splide__slide"><img width="100px" height="35" src="./images/icons/bitcoin@1X.png" alt=""></li>
-                <li class="splide__slide"><img width="100px" height="35" src="./images/icons/cashu@1X.png" alt=""></li>
-                <li class="splide__slide"><img width="70px" height="35" src="./images/icons/mastercard@1X.png" alt="">
+    <div class="splide"
+        style="padding: 20px;background-color:#0090EB; background-image: linear-gradient(to bottom, #EEEDEB, #DEF0FC);">
+        <div class="splide__track ml-auto mr-auto col-lg-10 col-sm-12 ">
+            <ul class="splide__list text-center">
+                <li class="splide__slide"><img width="60px" height="25" src="./images/icons/bitcoin@1X.png" alt="">
                 </li>
-                <li class="splide__slide"><img width="100px" height="35" src="./images/icons/visa@1X.png" alt=""></li>
-                <li class="splide__slide"><img width="100px" height="35" src="./images/icons/paypal@1X.png" alt=""></li>
-                <li class="splide__slide"><img width="100px" height="35" src="./images/icons/perfect@1X.png" alt=""></li>
+                <li class="splide__slide"><img width="60px" height="25" src="./images/icons/cashu@1X.png" alt=""></li>
+                <li class="splide__slide"><img width="60px" height="25" src="./images/icons/mastercard@1X.png" alt="">
+                </li>
+                <li class="splide__slide"><img width="60px" height="25" src="./images/icons/visa@1X.png" alt=""></li>
+                <li class="splide__slide"><img width="60px" height="25" src="./images/icons/paypal@1X.png" alt=""></li>
+                <li class="splide__slide"><img width="60px" height="25" src="./images/icons/perfect@1X.png" alt="">
+                </li>
             </ul>
         </div>
     </div>
-    <footer class="container col-12">
+    <footer class="container col-12 pl-4     pr-4">
         <div class="row pb-4">
             <div class="col-lg-4 col-md-12 mt-5">
                 <div class="col p-0">
@@ -511,12 +650,12 @@
                     <li class="col-4 mt-1"><a href="">رابط نصي</a></li>
                     <li class="col-4 mt-1"><a href="">رابط نصي</a></li>
                     <li class="col-4 mt-1"><a href="">رابط نصي</a></li>
-                    <li class="col-4 mt-2"><a href="">رابط نصي</a></li>
-                    <li class="col-4 mt-2"><a href="">رابط نصي</a></li>
-                    <li class="col-4 mt-2"><a href="">رابط نصي</a></li>
-                    <li class="col-4 mt-2"><a href="">رابط نصي</a></li>
-                    <li class="col-4 mt-2"><a href="">رابط نصي</a></li>
-                    <li class="col-4 mt-2"><a href="">رابط نصي</a></li>
+                    <li class="col-4 mt-3"><a href="">رابط نصي</a></li>
+                    <li class="col-4 mt-3"><a href="">رابط نصي</a></li>
+                    <li class="col-4 mt-3"><a href="">رابط نصي</a></li>
+                    <li class="col-4 mt-3"><a href="">رابط نصي</a></li>
+                    <li class="col-4 mt-3"><a href="">رابط نصي</a></li>
+                    <li class="col-4 mt-3"><a href="">رابط نصي</a></li>
                 </ul>
             </div>
             <div class="col-md-12 p-0 col-lg mt-4 text-right text-white">
@@ -572,8 +711,16 @@
     crossorigin="anonymous"></script>
 <script>
     new Splide('.splide', {
-        fixedWidth: '20rem',
+        fixedWidth: '27vw',
+        type: 'loop',
+        perPage: 3,
+        perMove: 1,
     }).mount();
+</script>
+<script>
+    $('#barsBtn').on("click", () => {
+        $('#slideMenue').show()
+    })
 </script>
 
 </html>
