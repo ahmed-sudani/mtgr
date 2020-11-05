@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mtgr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>تسجيل الـدخـول</title>
+</head>
+
+<body ng-controller="sign_up">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark d-lg-none p-0">
+        <!-- <a class="navbar-brand" href="">Brand</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button> -->
+        <div class="collapse navbar-collapse bg-dark p-0" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto text-right pr-3">
+                <li class="nav-item text-left">
+                    <a data-toggle="collapse" data-target="#navbarCollapse" style="width: fit-content;"
+                        class="nav-link font-weight-bold" href="#"><i
+                            class="fa fa-arrow-right rounded bg-white pr-3 pl-3 pt-1 pb-1 fa-lg" style="color: #0090EB;"
+                            aria-hidden="true"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold" href="#">الرئيسية <i class="fa fa-home fa-lg"
+                            aria-hidden="true"></i></a>
+                </li>
+                <li class="nav-item border-top">
+                    <a class="nav-link font-weight-bold" href="#">من نحن <i class="fa fa-users fa-lg"
+                            aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li class="nav-item border-top">
+                    <a class="nav-link font-weight-bold" href="#">مشترياتي <i class="fa fa-shopping-cart fa-lg"
+                            aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li class="nav-item border-top border-bottom">
+                    <a class="nav-link font-weight-bold" href="#">إتصل بنا <i class="fa fa-envelope fa-lg"
+                            aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg" style="background-color: #0761a1;">
+        <div class="d-none d-lg-block">
+            <ul class="nav col-12 justify-content-between" id="sm">
+                <li class="nav-item rounded mr-2"
+                    style="background-image: linear-gradient(to bottom, #FFFFFF, #E3E3E3);">
+                    <a class="nav-link"><img width="40px" src="./images/icons/visa@1X.png" alt=""></a>
+                </li>
+                <li class="nav-item rounded mr-2"
+                    style="background-image: linear-gradient(to bottom, #FFFFFF, #E3E3E3);">
+                    <a class="nav-link"><img width="40px" src="./images/icons/mastercard@1X.png" alt=""></a>
+                </li>
+                <li class="nav-item rounded mr-2"
+                    style="background-image: linear-gradient(to bottom, #FFFFFF, #E3E3E3);">
+                    <a class="nav-link"><img width="40px" src="./images/icons/bitcoin@1X.png" alt=""></a>
+                </li>
+                <li class="nav-item rounded mr-2"
+                    style="background-image: linear-gradient(to bottom, #FFFFFF, #E3E3E3);">
+                    <a class="nav-link"><img width="40px" src="./images/icons/perfect@1X.png" alt=""></a>
+                </li>
+                <li class="nav-item rounded" style="background-image: linear-gradient(to bottom, #FFFFFF, #E3E3E3);">
+                    <a class="nav-link"><img width="40px" src="./images/icons/cashu@1X.png" alt=""></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white!important;">نـحـن نـقـبـل</a>
+                </li>
+            </ul>
+        </div>
+        <a href="" class="text-white d-lg-none mt-2" style="font-size: .9rem;">تـسـجـيـل الـدخـول <i
+                class="fa fa-shopping-cart fa bg-white p-1 rounded ml-2" style="color: #0090EB;"></i></a>
+        <a class="navbar-brand ml-auto" href="#"><img width="150vw" src="./images/لوجو متجر السوادن - white@2x.png"
+                alt=""></a>
+        <button class="navbar-toggler mt-3 p-0" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <i id="barsBtn" class="fa fa-bars fa-lg text-white" aria-hidden="true"></i>
+        </button>
+        <ul class="nav mt-5 col-12 p-0 justify-content-between d-lg-none d-md-none d-sm-none"
+            style="flex-wrap: nowrap;">
+            <li class="nav-item rounded" style="background-image: linear-gradient(to bottom, #FFFFFF, #E3E3E3);">
+                <a class="nav-link"><img width="30px" src="./images/icons/visa@1X.png" alt=""></a>
+            </li>
+            <li class="nav-item rounded" style="background-image: linear-gradient(to bottom, #FFFFFF, #E3E3E3);">
+                <a class="nav-link"><img width="30px" src="./images/icons/mastercard@1X.png" alt=""></a>
+            </li>
+            <li class="nav-item rounded" style="background-image: linear-gradient(to bottom, #FFFFFF, #E3E3E3);">
+                <a class="nav-link"><img width="30px" src="./images/icons/bitcoin@1X.png" alt=""></a>
+            </li>
+            <li class="nav-item rounded" style="background-image: linear-gradient(to bottom, #FFFFFF, #E3E3E3);">
+                <a class="nav-link"><img width="30px" src="./images/icons/perfect@1X.png" alt=""></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link pl-0 pr-0" style="color: white!important;">نـحـن نـقـبـل</a>
+            </li>
+        </ul>
+        <div class="input-group mb-3  mt-3 d-md-none">
+            <div class="input-group-prepend">
+                <i class="fa fa-search fa-2x text-white pl-3 pr-3 pt-1 pb-1 rounded"
+                    style="background-image: linear-gradient(to top, #2D5797, #08172A); border: none;"></i>
+            </div>
+            <input style="height: 40px;" dir="rtl" type="text" class="form-control text-right"
+                placeholder="بحث متجر السودان" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+    </nav>
+    <div class="container">
+        <div class="col shadow bg-white rounded mb-5 pt-5 pb-5 mt-5">
+            <form>
+                <h1 class="text-center"> تسجيل الـدخـول<span style="color:#0761a1;"> متجر السوادن</span></h1>
+                <p class="text-muted text-center" style="font-size: .9rem;"> مرحبا بعودتك مجددا, قم باكمال عملية تسجيل
+                    الدخول للوصول الي آخر معاملاتك</p>
+                <div class="form-group col-md-8 ml-auto mr-auto mt-5">
+                    <div class="" id="error">
+                    </div>
+                    <label for="exampleInputEmail1" class="formlabel col p-0 text-right">البريد الالكتروني</label>
+                    <input title="الرجاء تعبئة هذا الحقل" type="email" dir="rtl" class="form-control" ng-model="email"
+                        id="exampleInputEmail1" required aria-describedby="emailHelp">
+                    <!-- <small id="emailHelp" class="form-text text-muted col p-0 text-right">سوف نقوم بمالمحافظة على سرية
+                        بريدك الالكتروني</small> -->
+                </div>
+                <div class="form-group col-md-8 ml-auto mr-auto mt-4">
+                    <label for="exampleInputPassword1" class="formlabel col p-0 text-right">كلمة المرور</label>
+                    <input title="الرجاء تعبئة هذا الحقل" type="password" minlength="6" dir="rtl" ng-model="password"
+                        class="form-control" id="exampleInputPassword1" required>
+                </div>
+                <div class="col-md-12 text-center">
+                    <button style="background-image: linear-gradient(to top, #2D5797, #08172A); border: none;"
+                        type="submit" id="submit" class="btn mt-4 text-white pl-5 pr-5">
+                        <div class="spinner-grow spinner-grow-sm" id="load" style="display: none;" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <span id="submitText">تـسـجـيـل الـدخـول</span>
+                    </button>
+                </div>
+                <div class="col-md-8 ml-auto mr-auto p-0 mt-4 row m-0">
+                    <div class="col-12 text-right">
+                        <a href="" style="color: #0761a1;">هل نسيت كلمة المرور ؟</a>
+                    </div>
+                    <div class="col-12 text-right">
+                        <a href="" style="color: #0761a1;">لا تمتلك حسابا ؟</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="splide"
+        style="padding: 20px;background-color:#0090EB; background-image: linear-gradient(to bottom, #EEEDEB, #DEF0FC);">
+        <div class="splide__track ml-auto mr-auto col-lg-10 col-sm-12 ">
+            <ul class="splide__list text-center">
+                <li class="splide__slide"><img width="60px" height="25" src="./images/icons/bitcoin@1X.png" alt="">
+                </li>
+                <li class="splide__slide"><img width="60px" height="25" src="./images/icons/cashu@1X.png" alt=""></li>
+                <li class="splide__slide"><img height="25" src="./images/icons/mastercard@1X.png" alt="">
+                </li>
+                <li class="splide__slide"><img width="60px" height="25" src="./images/icons/visa@1X.png" alt=""></li>
+                <li class="splide__slide"><img width="60px" height="25" src="./images/icons/paypal@1X.png" alt=""></li>
+                <li class="splide__slide"><img width="60px" height="25" src="./images/icons/perfect@1X.png" alt="">
+                </li>
+            </ul>
+        </div>
+    </div>
+    <footer class="container col-12 pl-4     pr-4">
+        <div class="row pb-4">
+            <div class="col-md-6 col-lg-4 col-sm-12 mt-5">
+                <div class="col p-0">
+                    <h5 class="ml-auto" style="font-size: 1.2rem; color: white; width: fit-content;">
+                        روابط ذات صلة
+                    </h5>
+                </div>
+                <ul class="row text-right p-0 mt-4">
+                    <li class="col-4 mt-1"><a href="">رابط نصي</a></li>
+                    <li class="col-4 mt-1"><a href="">رابط نصي</a></li>
+                    <li class="col-4 mt-1"><a href="">رابط نصي</a></li>
+                    <li class="col-4 mt-3"><a href="">رابط نصي</a></li>
+                    <li class="col-4 mt-3"><a href="">رابط نصي</a></li>
+                    <li class="col-4 mt-3"><a href="">رابط نصي</a></li>
+                    <li class="col-4 mt-3"><a href="">رابط نصي</a></li>
+                    <li class="col-4 mt-3"><a href="">رابط نصي</a></li>
+                    <li class="col-4 mt-3"><a href="">رابط نصي</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-12 p-0 col-md mt-4 text-right text-white">
+                <div class="col">
+                    <img style="width: 170px;" src="./images/لوجو متجر السوادن - white@3x.png" alt="">
+                </div>
+                <div class="col mt-2">
+                    <h5 style="font-size: 1.2rem;">... تابعونا</h5>
+                </div>
+                <div class="col">
+                    <i style=" padding: 5px;color: rgb(255, 255, 255);" class="fa fa-facebook fa-lg"
+                        aria-hidden="true"></i>
+                    <i style="padding: 5px; color: rgb(255, 255, 255);" class="fa fa-twitter fa-lg"
+                        aria-hidden="true"></i>
+                    <i style="padding: 5px; color: rgb(255, 255, 255);" class="fa fa-instagram fa-lg"
+                        aria-hidden="true"></i>
+                    <i style="padding: 5px; color: rgb(255, 255, 255);" class="fa fa-telegram fa-lg"
+                        aria-hidden="true"></i>
+                    <i style="padding: 5px;  color: rgb(255, 255, 255);" class="fa fa-youtube fa-lg"
+                        aria-hidden="true"></i>
+                    <i style="padding: 5px;  color: rgb(255, 255, 255);" class="fa fa-whatsapp fa-lg"
+                        aria-hidden="true"></i>
+                    <i style="padding: 5px; color: rgb(255, 255, 255);" class="fa fa-envelope fa-lg"
+                        aria-hidden="true"></i>
+                    <i style="padding: 5px;  color: rgb(255, 255, 255);" class="fa fa-snapchat fa-lg"
+                        aria-hidden="true"></i>
+
+                </div>
+                <div class="row col p-0 mt-3 justify-content-end">
+                    <a href=""><img class="mr-2" style="width:125px;" height="50px"
+                            src="./images/icons/getgoogleplay.png" alt=""></a>
+                    <a href=""><img style="width: 125px;" height="50px" src="./images/icons/getonplay.png" alt=""></a>
+                </div>
+                <div class="col mt-3">
+                    <h1 style="font-size: .8rem;" class="text-white text-right mb-0">جميع الحقوق محفوظة للمتجر
+                        السودانى 2019 -
+                        2020
+                    </h1>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+        new Splide('.splide', {
+            fixedWidth: '27vw',
+            type: 'loop',
+            perPage: 3,
+            perMove: 1,
+        }).mount();
+    </script>
+    <script>
+        $('#barsBtn').on("click", () => {
+            $('#slideMenue').show()
+        })
+    </script>
+    <script>
+        angular.module('mtgr', [])
+            .controller('sign_up', async ($scope, $http) => {
+
+            })
+    </script>
+
+</body>
+
+</html>
