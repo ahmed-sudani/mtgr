@@ -12,144 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
     <script src="/bootstrap.min.js"></script>
-    <style>
-        .badge {
-            padding-left: 9px;
-            padding-right: 9px;
-            -webkit-border-radius: 10px;
-            -moz-border-radius: 9px;
-            border-radius: 10px;
-        }
-
-        .label-warning[href],
-        .badge-warning[href] {
-            background-color: #c67605;
-        }
-
-        #lblCartCount {
-            font-size: 12px;
-            background: #FF0000;
-            color: #fff;
-            padding: 0 5px;
-            vertical-align: top;
-            margin-left: -10px;
-        }
-
-        ol li {
-            background-color: #009dff !important;
-            border-radius: 100%;
-            width: 15px !important;
-            height: 15px !important;
-        }
-
-        ol .active {
-            background-color: white !important;
-            /* border: 2px solid #0090EB !important; */
-        }
-
-        ul li a {
-            color: white !important;
-        }
-
-        ul li a:hover {
-            color: black !important;
-        }
-
-        footer ul {
-            direction: rtl;
-            color: white;
-            font-weight: bold;
-            list-style-position: inside;
-        }
-
-        footer ul li {
-            padding-left: 0% !important;
-        }
-
-        footer {
-            /* background-color: #0C8DDD;
-            opacity: 60%; */
-            display: block;
-            position: relative;
-            box-shadow: 0px 3pt 6pt #00000033;
-            /* background: url('./images/backgrounds/Header@3x.png'); */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-color: #0761a1;
-            opacity: .99;
-        }
-
-        @font-face {
-            font-family: 'Frutiger LT Arabic 65 Bold';
-            font-style: normal;
-            font-weight: normal;
-            src: local('Frutiger LT Arabic 65 Bold'), url('./fonts/FrutigerLTArabic65Bold.woff') format('woff');
-        }
-
-        @font-face {
-            font-family: 'Frutiger LT Arabic 45 Light';
-            font-style: normal;
-            font-weight: normal;
-            src: local('Frutiger LT Arabic 45 Light'), url('./fonts/FrutigerLTArabic45Light.woff') format('woff');
-        }
-
-        li .is-active {
-            background-color: #0090EB !important;
-        }
-
-        .splide__arrow,
-        .splide__arrow--prev {
-            background-color: #0090EB;
-        }
-
-        .splide__pagination {
-            display: none;
-        }
-
-        * {
-            font-family: 'Frutiger LT Arabic 65 Bold';
-        }
-
-        #slideMen {
-            background-color: #0090EB;
-            position: fixed;
-            z-index: 1;
-            top: 0px;
-            right: 0px;
-            width: 50%;
-            bottom: 20%;
-
-        }
-
-        @media (max-width: 992px) {
-            .navbar-collapse {
-                position: fixed;
-                top: 0px;
-                right: 0;
-                padding-left: 15px;
-                padding-right: 15px;
-                padding-bottom: 15px;
-                width: 75%;
-                height: 100%;
-                background-color: #2c6e9c !important;
-            }
-
-            .navbar-collapse.collapsing {
-                right: -75%;
-                transition: height 0s ease;
-            }
-
-            .navbar-collapse.show {
-                right: 0;
-                transition: right 300ms ease-in-out;
-            }
-
-            .navbar-toggler.collapsed~.navbar-collapse {
-                transition: right 500ms ease-in-out;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="./styles/style.css">
     <title>Home</title>
 </head>
 
@@ -217,7 +80,7 @@
                 </li>
             </ul>
         </div>
-        <a href="" class="text-white d-lg-none mt-2" style="font-size: 1rem;">تـسـجـيـل الـدخـول <i
+        <a href="" class="text-white d-lg-none mt-2" style="font-size: .9rem;">تـسـجـيـل الـدخـول <i
                 class="fa fa-shopping-cart fa bg-white p-1 rounded ml-2" style="color: #0090EB;"></i></a>
         <a class="navbar-brand ml-auto" href="#"><img width="150vw" src="./images/لوجو متجر السوادن - white@2x.png"
                 alt=""></a>
@@ -248,8 +111,8 @@
                 <i class="fa fa-search fa-2x text-white pl-3 pr-3 pt-1 pb-1 rounded"
                     style="background-image: linear-gradient(to top, #2D5797, #08172A); border: none;"></i>
             </div>
-            <input style="height: 40px;" type="text" class="form-control text-right" placeholder="بحث متجر السودان"
-                aria-label="Username" aria-describedby="basic-addon1">
+            <input style="height: 40px;" dir="rtl" type="text" class="form-control text-right"
+                placeholder="بحث متجر السودان" aria-label="Username" aria-describedby="basic-addon1">
         </div>
     </nav>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -329,7 +192,7 @@
                     </div>
 
                     <div class="col text-center mt-5">
-                        <img width="100" height="35" src="./images/icons/perfect@1X.png" alt="">
+                        <img src="./images/icons/perfect@1X.png" alt="">
                     </div>
                 </div>
             </div>
@@ -343,7 +206,7 @@
                         <img src="./images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
                     </div>
                     <div class="col text-center mt-5">
-                        <img width="100" height="35" src="./images/icons/bitcoin@1X.png" alt="">
+                        <img src="./images/icons/bitcoin@1X.png" alt="">
                     </div>
                 </div>
             </div>
@@ -357,7 +220,7 @@
                         <img src="./images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
                     </div>
                     <div class="col text-center mt-5">
-                        <img width="100" height="35" src="./images/icons/visa@1X.png" alt="">
+                        <img src="./images/icons/visa@1X.png" alt="">
                     </div>
                 </div>
             </div>
@@ -371,7 +234,7 @@
                         <img src="./images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
                     </div>
                     <div class="col text-center mt-5">
-                        <img width="100" height="35" src="./images/icons/cashu@1X.png" alt="">
+                        <img src="./images/icons/cashu@1X.png" alt="">
                     </div>
                 </div>
             </div>
@@ -385,7 +248,7 @@
                         <img src="./images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
                     </div>
                     <div class="col text-center mt-5">
-                        <img width="70" height="35" src="./images/icons/mastercard@1X.png" alt="">
+                        <img src="./images/icons/mastercard@1X.png" alt="">
                     </div>
                 </div>
             </div>
@@ -399,7 +262,7 @@
                         <img src="./images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
                     </div>
                     <div class="col text-center mt-5">
-                        <img width="100" height="35" src="./images/icons/bitcoin@1X.png" alt="">
+                        <img src="./images/icons/bitcoin@1X.png" alt="">
                     </div>
                 </div>
             </div>
@@ -410,7 +273,7 @@
                         <img src="./images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
                     </div>
                     <div class="col text-center mt-5">
-                        <img width="100" height="35" src="./images/icons/cashu@1X.png" alt="">
+                        <img src="./images/icons/cashu@1X.png" alt="">
                     </div>
                 </div>
             </div>
@@ -421,7 +284,7 @@
                         <img src="./images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
                     </div>
                     <div class="col text-center mt-5">
-                        <img width="100" height="35" src="./images/icons/visa@1X.png" alt="">
+                        <img src="./images/icons/visa@1X.png" alt="">
                     </div>
                 </div>
             </div>
@@ -432,7 +295,7 @@
                         <img src="./images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
                     </div>
                     <div class="col text-center mt-5">
-                        <img width="70" height="35" src="./images/icons/mastercard@1X.png" alt="">
+                        <img src="./images/icons/mastercard@1X.png" alt="">
                     </div>
                 </div>
             </div>
@@ -443,7 +306,7 @@
                         <img src="./images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
                     </div>
                     <div class="col text-center mt-5">
-                        <img width="100" height="35" src="./images/icons/paypal@1X.png" alt="">
+                        <img src="./images/icons/paypal@1X.png" alt="">
                     </div>
                 </div>
             </div>
@@ -457,7 +320,7 @@
                         <img src="./images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
                     </div>
                     <div class="col text-center mt-5">
-                        <img width="100" height="35" src="./images/icons/bitcoin@1X.png" alt="">
+                        <img src="./images/icons/bitcoin@1X.png" alt="">
                     </div>
                 </div>
             </div>
@@ -468,7 +331,7 @@
                         <img src="./images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
                     </div>
                     <div class="col text-center mt-5">
-                        <img width="100" height="35" src="./images/icons/cashu@1X.png" alt="">
+                        <img src="./images/icons/cashu@1X.png" alt="">
                     </div>
                 </div>
             </div>
@@ -480,7 +343,7 @@
                         <img src="./images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
                     </div>
                     <div class="col text-center mt-5">
-                        <img width="70" height="35" src="./images/icons/mastercard@1X.png" alt="">
+                        <img src="./images/icons/mastercard@1X.png" alt="">
                     </div>
                 </div>
             </div>
@@ -491,7 +354,7 @@
                         <img src="./images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
                     </div>
                     <div class="col text-center mt-5">
-                        <img width="100" height="35" src="./images/icons/paypal@1X.png" alt="">
+                        <img src="./images/icons/paypal@1X.png" alt="">
                     </div>
                 </div>
             </div>
@@ -502,7 +365,7 @@
                         <img src="./images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
                     </div>
                     <div class="col text-center mt-5">
-                        <img width="100" height="35" src="./images/icons/visa@1X.png" alt="">
+                        <img src="./images/icons/visa@1X.png" alt="">
                     </div>
                 </div>
             </div>
@@ -515,7 +378,7 @@
                         <img src="./images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
                     </div>
                     <div class="col text-center mt-5">
-                        <img width="100" height="35" src="./images/icons/bitcoin@1X.png" alt="">
+                        <img src="./images/icons/bitcoin@1X.png" alt="">
                     </div>
                 </div>
             </div>
@@ -526,7 +389,7 @@
                         <img src="./images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
                     </div>
                     <div class="col text-center mt-5">
-                        <img width="100" height="35" src="./images/icons/cashu@1X.png" alt="">
+                        <img src="./images/icons/cashu@1X.png" alt="">
                     </div>
                 </div>
             </div>
@@ -537,7 +400,7 @@
                         <img src="./images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
                     </div>
                     <div class="col text-center mt-5">
-                        <img width="100" height="35" src="./images/icons/visa@1X.png" alt="">
+                        <img src="./images/icons/visa@1X.png" alt="">
                     </div>
                 </div>
             </div>
@@ -548,7 +411,7 @@
                         <img src="./images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
                     </div>
                     <div class="col text-center mt-5">
-                        <img width="100" height="35" src="./images/icons/paypal@1X.png" alt="">
+                        <img src="./images/icons/paypal@1X.png" alt="">
                     </div>
                 </div>
             </div>
@@ -559,7 +422,7 @@
                         <img src="./images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
                     </div>
                     <div class="col text-center mt-5">
-                        <img width="70" height="35" src="./images/icons/mastercard@1X.png" alt="">
+                        <img src="./images/icons/mastercard@1X.png" alt="">
                     </div>
                 </div>
             </div>
@@ -572,7 +435,7 @@
                         <img src="./images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
                     </div>
                     <div class="col text-center mt-5">
-                        <img width="100" height="35" src="./images/icons/bitcoin@1X.png" alt="">
+                        <img src="./images/icons/bitcoin@1X.png" alt="">
                     </div>
                 </div>
             </div>
@@ -583,7 +446,7 @@
                         <img src="./images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
                     </div>
                     <div class="col text-center mt-5">
-                        <img width="100" height="35" src="./images/icons/cashu@1X.png" alt="">
+                        <img src="./images/icons/cashu@1X.png" alt="">
                     </div>
                 </div>
             </div>
@@ -594,7 +457,7 @@
                         <img src="./images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
                     </div>
                     <div class="col text-center mt-5">
-                        <img width="100" height="35" src="./images/icons/visa@1X.png" alt="">
+                        <img src="./images/icons/visa@1X.png" alt="">
                     </div>
                 </div>
             </div>
@@ -605,7 +468,7 @@
                         <img src="./images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
                     </div>
                     <div class="col text-center mt-5">
-                        <img width="100" height="35" src="./images/icons/paypal@1X.png" alt="">
+                        <img src="./images/icons/paypal@1X.png" alt="">
                     </div>
                 </div>
             </div>
@@ -616,7 +479,7 @@
                         <img src="./images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
                     </div>
                     <div class="col text-center mt-5">
-                        <img width="70" height="35" src="./images/icons/mastercard@1X.png" alt="">
+                        <img src="./images/icons/mastercard@1X.png" alt="">
                     </div>
                 </div>
             </div>
@@ -629,7 +492,7 @@
                 <li class="splide__slide"><img width="60px" height="25" src="./images/icons/bitcoin@1X.png" alt="">
                 </li>
                 <li class="splide__slide"><img width="60px" height="25" src="./images/icons/cashu@1X.png" alt=""></li>
-                <li class="splide__slide"><img width="60px" height="25" src="./images/icons/mastercard@1X.png" alt="">
+                <li class="splide__slide"><img height="25" src="./images/icons/mastercard@1X.png" alt="">
                 </li>
                 <li class="splide__slide"><img width="60px" height="25" src="./images/icons/visa@1X.png" alt=""></li>
                 <li class="splide__slide"><img width="60px" height="25" src="./images/icons/paypal@1X.png" alt=""></li>
@@ -640,7 +503,7 @@
     </div>
     <footer class="container col-12 pl-4     pr-4">
         <div class="row pb-4">
-            <div class="col-lg-4 col-md-12 mt-5">
+            <div class="col-md-6 col-lg-4 col-sm-12 mt-5">
                 <div class="col p-0">
                     <h5 class="ml-auto" style="font-size: 1.2rem; color: white; width: fit-content;">
                         روابط ذات صلة
@@ -658,7 +521,7 @@
                     <li class="col-4 mt-3"><a href="">رابط نصي</a></li>
                 </ul>
             </div>
-            <div class="col-md-12 p-0 col-lg mt-4 text-right text-white">
+            <div class="col-sm-12 p-0 col-md mt-4 text-right text-white">
                 <div class="col">
                     <img style="width: 170px;" src="./images/لوجو متجر السوادن - white@3x.png" alt="">
                 </div>

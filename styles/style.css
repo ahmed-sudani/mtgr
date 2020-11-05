@@ -1,0 +1,137 @@
+.badge {
+  padding-left: 9px;
+  padding-right: 9px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 9px;
+  border-radius: 10px;
+}
+
+.label-warning[href],
+.badge-warning[href] {
+  background-color: #c67605;
+}
+
+#lblCartCount {
+  font-size: 12px;
+  background: #ff0000;
+  color: #fff;
+  padding: 0 5px;
+  vertical-align: top;
+  margin-left: -10px;
+}
+
+ol li {
+  background-color: #009dff !important;
+  border-radius: 100%;
+  width: 15px !important;
+  height: 15px !important;
+}
+
+ol .active {
+  background-color: white !important;
+  /* border: 2px solid #0090EB !important; */
+}
+
+ul li a {
+  color: white !important;
+}
+
+ul li a:hover {
+  color: black !important;
+}
+
+footer ul {
+  direction: rtl;
+  color: white;
+  font-weight: bold;
+  list-style-position: inside;
+}
+
+footer ul li {
+  padding-left: 0% !important;
+}
+
+footer {
+  /* background-color: #0C8DDD;
+      opacity: 60%; */
+  display: block;
+  position: relative;
+  box-shadow: 0px 3pt 6pt #00000033;
+  /* background: url('./images/backgrounds/Header@3x.png'); */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #0761a1;
+  opacity: 0.99;
+}
+
+@font-face {
+  font-family: "Frutiger LT Arabic 65 Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Frutiger LT Arabic 65 Bold"),
+    url("../fonts/FrutigerLTArabic65Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Frutiger LT Arabic 45 Light";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Frutiger LT Arabic 45 Light"),
+    url("../fonts/FrutigerLTArabic45Light.woff") format("woff");
+}
+
+li .is-active {
+  background-color: #0090eb !important;
+}
+
+.splide__arrow,
+.splide__arrow--prev {
+  background-color: #0090eb;
+}
+
+.splide__pagination {
+  display: none;
+}
+
+* {
+  font-family: "Frutiger LT Arabic 65 Bold";
+}
+
+#slideMen {
+  background-color: #0090eb;
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  right: 0px;
+  width: 50%;
+  bottom: 20%;
+}
+
+@media (max-width: 992px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 0px;
+    right: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    width: 75%;
+    height: 100%;
+    background-color: #2c6e9c !important;
+  }
+
+  .navbar-collapse.collapsing {
+    right: -75%;
+    transition: height 0s ease;
+  }
+
+  .navbar-collapse.show {
+    right: 0;
+    transition: right 300ms ease-in-out;
+  }
+
+  .navbar-toggler.collapsed ~ .navbar-collapse {
+    transition: right 500ms ease-in-out;
+  }
+}
