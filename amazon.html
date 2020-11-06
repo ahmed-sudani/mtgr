@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .input-number {
+            width: 80px;
+            padding: 0 12px;
+            vertical-align: top;
+            text-align: center;
+            outline: none;
+        }
+
+        .input-number,
+        .input-number-decrement,
+        .input-number-increment {
+            border: 1px solid #ccc;
+            height: 40px;
+            user-select: none;
+        }
+
+        .input-number-decrement,
+        .input-number-increment {
+            display: inline-block;
+            width: 30px;
+            line-height: 38px;
+            background: #f1f1f1;
+            color: #444;
+            text-align: center;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .input-number-decrement {
+            border-right: none;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .input-number-increment {
+            border-left: none;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .select2-results__options li {
+            text-align: right;
+        }
+
+        .select2-selection__arrow {
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            margin-top: 10px;
+            border-right: 1px solid gray;
+            padding: 14px 20px;
+        }
+
+        #select2-countries-container {
+            padding: 0px;
+        }
+
+        .select2-selection,
+        .select2-selection--single {
+            padding: 10px;
+            height: auto !important;
+        }
+
+        .select2-results__options li:first-child img {
+            display: none;
+        }
+
+        .img-flag {
+            float: left;
+        }
+
+        td,
+        .select2-results__options li span,
+        #select2-countries-container,
+        .select2-search__field,
+        .cardDiscribtion,
+        #shoroot li {
+            font-family: 'Frutiger LT Arabic 45 Light' !important;
+        }
+    </style>
+    <title>بطاقات آمازون</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark d-lg-none p-0">
+        <div class="collapse navbar-collapse bg-dark p-0" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto text-right pr-3">
+                <li class="nav-item text-left">
+                    <a data-toggle="collapse" data-target="#navbarCollapse" style="width: fit-content;"
+                        class="nav-link font-weight-bold" href="#"><i
+                            class="fa fa-arrow-right rounded bg-white pr-3 pl-3 pt-1 pb-1 fa-lg" style="color: #0090EB;"
+                            aria-hidden="true"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold" href="#">الرئيسية <i class="fa fa-home fa-lg"
+                            aria-hidden="true"></i></a>
+                </li>
+                <li class="nav-item border-top">
+                    <a class="nav-link font-weight-bold" href="#">من نحن <i class="fa fa-users fa-lg"
+                            aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li class="nav-item border-top">
+                    <a class="nav-link font-weight-bold" href="#">مشترياتي <i class="fa fa-shopping-cart fa-lg"
+                            aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li class="nav-item border-top border-bottom">
+                    <a class="nav-link font-weight-bold" href="#">إتصل بنا <i class="fa fa-envelope fa-lg"
+                            aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg" style="background-color: #0761a1;">
+        <div class="d-none d-lg-block">
+            <ul class="nav col-12 justify-content-between" id="sm">
+                <li class="nav-item rounded mr-2"
+                    style="background-image: linear-gradient(to bottom, #FFFFFF, #E3E3E3);">
+                    <a class="nav-link"><img width="40px" src="./images/icons/visa@1X.png" alt=""></a>
+                </li>
+                <li class="nav-item rounded mr-2"
+                    style="background-image: linear-gradient(to bottom, #FFFFFF, #E3E3E3);">
+                    <a class="nav-link"><img width="40px" src="./images/icons/mastercard@1X.png" alt=""></a>
+                </li>
+                <li class="nav-item rounded mr-2"
+                    style="background-image: linear-gradient(to bottom, #FFFFFF, #E3E3E3);">
+                    <a class="nav-link"><img width="40px" src="./images/icons/bitcoin@1X.png" alt=""></a>
+                </li>
+                <li class="nav-item rounded mr-2"
+                    style="background-image: linear-gradient(to bottom, #FFFFFF, #E3E3E3);">
+                    <a class="nav-link"><img width="40px" src="./images/icons/perfect@1X.png" alt=""></a>
+                </li>
+                <li class="nav-item rounded" style="background-image: linear-gradient(to bottom, #FFFFFF, #E3E3E3);">
+                    <a class="nav-link"><img width="40px" src="./images/icons/cashu@1X.png" alt=""></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white!important;">نـحـن نـقـبـل</a>
+                </li>
+            </ul>
+        </div>
+        <a href="" class="text-white d-lg-none mt-2" style="font-size: .9rem;">تـسـجـيـل الـدخـول <i
+                class="fa fa-shopping-cart fa bg-white p-1 rounded ml-2" style="color: #0090EB;"></i></a>
+        <a class="navbar-brand ml-auto" href="#"><img width="150vw" src="./images/لوجو متجر السوادن - white@2x.png"
+                alt=""></a>
+        <button class="navbar-toggler mt-3 p-0" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <i id="barsBtn" class="fa fa-bars fa-lg text-white" aria-hidden="true"></i>
+        </button>
+        <ul class="nav mt-5 col-12 p-0 justify-content-between d-lg-none d-md-none d-sm-none"
+            style="flex-wrap: nowrap;">
+            <li class="nav-item rounded" style="background-image: linear-gradient(to bottom, #FFFFFF, #E3E3E3);">
+                <a class="nav-link"><img width="30px" src="./images/icons/visa@1X.png" alt=""></a>
+            </li>
+            <li class="nav-item rounded" style="background-image: linear-gradient(to bottom, #FFFFFF, #E3E3E3);">
+                <a class="nav-link"><img width="30px" src="./images/icons/mastercard@1X.png" alt=""></a>
+            </li>
+            <li class="nav-item rounded" style="background-image: linear-gradient(to bottom, #FFFFFF, #E3E3E3);">
+                <a class="nav-link"><img width="30px" src="./images/icons/bitcoin@1X.png" alt=""></a>
+            </li>
+            <li class="nav-item rounded" style="background-image: linear-gradient(to bottom, #FFFFFF, #E3E3E3);">
+                <a class="nav-link"><img width="30px" src="./images/icons/perfect@1X.png" alt=""></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link pl-0 pr-0" style="color: white!important;">نـحـن نـقـبـل</a>
+            </li>
+        </ul>
+        <div class="input-group mb-3  mt-3 d-md-none">
+            <div class="input-group-prepend">
+                <i class="fa fa-search fa-2x text-white pl-3 pr-3 pt-1 pb-1 rounded"
+                    style="background-image: linear-gradient(to top, #2D5797, #08172A); border: none;"></i>
+            </div>
+            <input style="height: 40px;" dir="rtl" type="text" class="form-control text-right"
+                placeholder="بحث متجر السودان" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+    </nav>
+    <div class="row shadow rounded mt-4 mb-4 mr-3 ml-3 pb-4">
+        <div class="col-md text-right mt-4 border-right ">
+            <div class="form-group col border-bottom p-0 pb-4">
+                <label class="col-12 p-0" style="font-size: 1.1rem;" for="countries"> :يرجى اختيار بلد البطاقة</label>
+                <select class="form-control col-9 p-5" id="countries">
+                    <option class="d-none" selected>اختر بلد البطاقة</option>
+                    <option value="SD" data-capital="Khartoum">السوادن</option>
+                    <option value="EG" data-capital="Cairo">مصر</option>
+                    <option value="JO" data-capital="Tirana">الاردن</option>
+                    <option value="IR" data-capital="Algiers">العراق</option>
+                    <option value="SA" data-capital="Riad">المملكة العربية السعودية</option>
+                    <option value="AE" data-capital="AbuDabi">الامارات</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label style="font-size: 1.1rem;" for="">:يرجى اختيار قيمة البطاقة</label>
+                <table class="table text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col">الكمية</th>
+                            <th scope="col">السعر</th>
+                            <th scope="col">القيمة</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="input-number-decrement">–</span><input class="input-number"
+                                    id="input-number1" type="text" value="0" min="0" max="10"><span
+                                    class="input-number-increment">+</span></td>
+                            <td>$10</td>
+                            <td>$10</td>
+                        </tr>
+                        <tr>
+                            <td><span class="input-number-decrement">–</span><input class="input-number" type="text"
+                                    id="input-number2" value="0" min="0" max="10"><span
+                                    class="input-number-increment">+</span></td>
+                            <td>$30</td>
+                            <td>$30</td>
+                        </tr>
+                        <tr>
+
+                            <td><span class="input-number-decrement">–</span><input class="input-number" type="text"
+                                    id="input-number3" value="0" min="0" max="10"><span
+                                    class="input-number-increment">+</span></td>
+                            <td>$100</td>
+                            <td>$100</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md col text-right mt-4">
+            <p><a href="">الصفحة الرئيسية</a>/ <a href="">بطاقات التسوق عبر الانترنت</a>/ <a href="">أمازمن</a></p>
+            <h3 class="pt-2 pb-2 pr-5 pl-5 text-white"
+                style="background-color:#0090EB; width: fit-content;float: right;">أمازمن</h3>
+            <img class="bg-dark mt-4" width="80%" src="./images/icons/iconfinder-icon.svg" alt="">
+            <p class="cardDiscribtion mt-2" dir="rtl">
+                <a href="">https://www.amazon.com</a> <br>
+                أمازون.كوم ويسمى أيضا أمازون (Amazon.com)‏، موقع للتجارة الإلكترونية والحوسبة السحابية
+                ، وهو أكبر متاجر التجزئة القائمة على الإنترنت
+                في العالم من حيث إجمالي المبيعات والقيمة السوقية. يمكنك أمازون من شراء المنتجات بأحدث اصدارتها من
+                الأجهزة الالكترونية والكتب الورقية, والأزياء, ومعدات التصوير ,والاثاثات .. مع خدمة التوصيل الي المنزل .
+            </p>
+            <p dir="rtl" class="cardDiscribtion mt-2">
+                بامكانك الشراء من أمازون عن طريق بطاقات أمازون الالكترونية, يقوم متجر السوادن للدفع الالكتروني بتوفير
+                بطاقات أمازمن الالكترونية بمختلف القيم .
+            </p>
+        </div>
+    </div>
+    <div class="shadow rounded mt-4 mb-4 mr-3 ml-3 pb-4 pt-4">
+        <h4 class="text-center ml-auto mr-auto pb-2" style="width: fit-content;border-bottom: 3px solid #0090EB;">الشروط
+            والأحكام</h4>
+        <div class="col text-right">
+            <h6>شروط المتجر السوداني</h6>
+            <ol class="col" dir="rtl" id="shoroot">
+                <li>يمتلك المتجر السوداني الق بتأخير أو رفض أي عملية شرائية.</li>
+                <li>قد يتم تحديد قيمة وعدد بطاقات الهدايا والبطاقات المدفوعة التي يمكنك شراؤها.</li>
+                <li>يكون التسليم الالكترونيا فقط.</li>
+                <li>من الممكن تأخر تسليم بطاقات الهدايا أو البطاقات المدفوعة مسبقا أو شحن الرصيد لعدة ساعات بعد اتمام
+                    العملية الشرائية. </li>
+                <li>المتجر السوداني غير مسؤول عن اي خسارة ناتجة عن سرقة بطاقات الهدايا أو البطاقات المدفوعة مسبقا أو شحن
+                    الرصيد بالخطأ. </li>
+                <li>عمليات ارجاع البطاقات أو النقود غير مسموحة.</li>
+                <li>في حالة حدوث خلاف لأي سبب كان, أنت تعفي المتجر السوداني (وشركاءها وتابعيها وموظفيها وعملاءها) من أية
+                    مسؤولية متعلقة بالخلاف. </li>
+                <p class="mt-4 p-0">لمزيد من المعلومات, يرجى زيارة صفحة <a href="">الشروط والأحكام</a></p>
+            </ol>
+        </div>
+    </div>
+    <div class="splide"
+        style="padding: 20px;background-color:#0090EB; background-image: linear-gradient(to bottom, #EEEDEB, #DEF0FC);">
+        <div class="splide__track ml-auto mr-auto col-lg-10 col-sm-12 ">
+            <ul class="splide__list text-center">
+                <li class="splide__slide"><img width="60px" height="25" src="./images/icons/bitcoin@1X.png" alt="">
+                </li>
+                <li class="splide__slide"><img width="60px" height="25" src="./images/icons/cashu@1X.png" alt=""></li>
+                <li class="splide__slide"><img height="25" src="./images/icons/mastercard@1X.png" alt="">
+                </li>
+                <li class="splide__slide"><img width="60px" height="25" src="./images/icons/visa@1X.png" alt=""></li>
+                <li class="splide__slide"><img width="60px" height="25" src="./images/icons/paypal@1X.png" alt=""></li>
+                <li class="splide__slide"><img width="60px" height="25" src="./images/icons/perfect@1X.png" alt="">
+                </li>
+            </ul>
+        </div>
+    </div>
+    <footer class="container col-12 pl-4     pr-4">
+        <div class="row pb-4">
+            <div class="col-md-6 col-lg-4 col-sm-12 mt-5">
+                <div class="col p-0">
+                    <h5 class="ml-auto" style="font-size: 1.2rem; color: white; width: fit-content;">
+                        روابط ذات صلة
+                    </h5>
+                </div>
+                <ul class="row text-right p-0 mt-4">
+                    <li class="col-4 mt-1"><a href="">رابط نصي</a></li>
+                    <li class="col-4 mt-1"><a href="">رابط نصي</a></li>
+                    <li class="col-4 mt-1"><a href="">رابط نصي</a></li>
+                    <li class="col-4 mt-3"><a href="">رابط نصي</a></li>
+                    <li class="col-4 mt-3"><a href="">رابط نصي</a></li>
+                    <li class="col-4 mt-3"><a href="">رابط نصي</a></li>
+                    <li class="col-4 mt-3"><a href="">رابط نصي</a></li>
+                    <li class="col-4 mt-3"><a href="">رابط نصي</a></li>
+                    <li class="col-4 mt-3"><a href="">رابط نصي</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-12 p-0 col-md mt-4 text-right text-white">
+                <div class="col">
+                    <img style="width: 170px;" src="./images/لوجو متجر السوادن - white@3x.png" alt="">
+                </div>
+                <div class="col mt-2">
+                    <h5 style="font-size: 1.2rem;">... تابعونا</h5>
+                </div>
+                <div class="col">
+                    <i style=" padding: 5px;color: rgb(255, 255, 255);" class="fa fa-facebook fa-lg"
+                        aria-hidden="true"></i>
+                    <i style="padding: 5px; color: rgb(255, 255, 255);" class="fa fa-twitter fa-lg"
+                        aria-hidden="true"></i>
+                    <i style="padding: 5px; color: rgb(255, 255, 255);" class="fa fa-instagram fa-lg"
+                        aria-hidden="true"></i>
+                    <i style="padding: 5px; color: rgb(255, 255, 255);" class="fa fa-telegram fa-lg"
+                        aria-hidden="true"></i>
+                    <i style="padding: 5px;  color: rgb(255, 255, 255);" class="fa fa-youtube fa-lg"
+                        aria-hidden="true"></i>
+                    <i style="padding: 5px;  color: rgb(255, 255, 255);" class="fa fa-whatsapp fa-lg"
+                        aria-hidden="true"></i>
+                    <i style="padding: 5px; color: rgb(255, 255, 255);" class="fa fa-envelope fa-lg"
+                        aria-hidden="true"></i>
+                    <i style="padding: 5px;  color: rgb(255, 255, 255);" class="fa fa-snapchat fa-lg"
+                        aria-hidden="true"></i>
+
+                </div>
+                <div class="row col p-0 mt-3 justify-content-end">
+                    <a href=""><img class="mr-2" style="width:125px;" height="50px"
+                            src="./images/icons/getgoogleplay.png" alt=""></a>
+                    <a href=""><img style="width: 125px;" height="50px" src="./images/icons/getonplay.png" alt=""></a>
+                </div>
+                <div class="col mt-3">
+                    <h1 style="font-size: .8rem;" class="text-white text-right mb-0">جميع الحقوق محفوظة للمتجر
+                        السودانى 2019 -
+                        2020
+                    </h1>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+<script>
+    new Splide('.splide', {
+        fixedWidth: '27vw',
+        type: 'loop',
+        perPage: 3,
+        perMove: 1,
+    }).mount();
+    $('#barsBtn').on("click", () => {
+        $('#slideMenue').show()
+    })
+</script>
+<!-- <script>
+    function format(item, state) {
+  if (!item.id) {
+    return item.text;
+  }
+  var countryUrl = "https://hatscripts.github.io/circle-flags/flags/";
+  var stateUrl = "https://oxguy3.github.io/flags/svg/us/";
+  var url = state ? stateUrl : countryUrl;
+  var img = $("<img>", {
+    class: "img-flag",
+    width: 26,
+    src: url + item.element.value.toLowerCase() + ".svg"
+  });
+  var span = $("<span>", {
+    text: " " + item.text
+  });
+  span.prepend(img);
+  return span;
+}
+
+$(document).ready(function() {
+  $("#countries").select2({
+    templateResult: function(item) {
+      return format(item, false);
+    }
+  });
+</script> -->
+<script>
+    function format(item, state) {
+        if (!item.id) {
+            return item.text;
+        }
+        var countryUrl = "https://hatscripts.github.io/circle-flags/flags/";
+        var stateUrl = "https://oxguy3.github.io/flags/svg/us/";
+        var url = state ? stateUrl : countryUrl;
+        var img = $("<img>", {
+            class: "img-flag",
+            width: 26,
+            src: url + item.element.value.toLowerCase() + ".svg"
+        });
+        var span = $("<span>", {
+            text: " " + item.text
+        });
+        span.prepend(img);
+        return span;
+    }
+
+    $(document).ready(function () {
+        $("#countries").select2({
+            templateResult: function (item) {
+                return format(item, false);
+            }
+        });
+    })
+</script>
+<script>
+        (function () {
+
+            window.inputNumber = function (el) {
+
+                var min = el.attr('min') || false;
+                var max = el.attr('max') || false;
+
+                var els = {};
+
+                els.dec = el.prev();
+                els.inc = el.next();
+
+                el.each(function () {
+                    init($(this));
+                });
+
+                function init(el) {
+
+                    els.dec.on('click', decrement);
+                    els.inc.on('click', increment);
+
+                    function decrement() {
+                        var value = el[0].value;
+                        value--;
+                        if (!min || value >= min) {
+                            el[0].value = value;
+                        }
+                    }
+
+                    function increment() {
+                        var value = el[0].value;
+                        value++;
+                        if (!max || value <= max) {
+                            el[0].value = value++;
+                        }
+                    }
+                }
+            }
+        })();
+
+    inputNumber($('#input-number1'));
+    inputNumber($('#input-number2'));
+    inputNumber($('#input-number3'));
+
+</script>
+
+</html>

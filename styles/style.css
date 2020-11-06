@@ -20,7 +20,7 @@
   margin-left: -10px;
 }
 
-ol li {
+.carousel-indicators li {
   background-color: #009dff !important;
   border-radius: 100%;
   width: 15px !important;
