@@ -12,89 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
     <link rel="stylesheet" href="./styles/style.css">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        .input-number {
-            width: 80px;
-            padding: 0 12px;
-            vertical-align: top;
-            text-align: center;
-            outline: none;
-        }
-
-        .input-number,
-        .input-number-decrement,
-        .input-number-increment {
-            border: 1px solid #ccc;
-            height: 40px;
-            user-select: none;
-        }
-
-        .input-number-decrement,
-        .input-number-increment {
-            display: inline-block;
-            width: 30px;
-            line-height: 38px;
-            background: #f1f1f1;
-            color: #444;
-            text-align: center;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .input-number-decrement {
-            border-right: none;
-            border-radius: 4px 0 0 4px;
-        }
-
-        .input-number-increment {
-            border-left: none;
-            border-radius: 0 4px 4px 0;
-        }
-
-        .select2-results__options li {
-            text-align: right;
-        }
-
-        .select2-selection__arrow {
-            position: absolute;
-            left: 0px;
-            bottom: 0px;
-            margin-top: 10px;
-            border-right: 1px solid gray;
-            padding: 14px 20px;
-        }
-
-        #select2-countries-container {
-            padding: 0px;
-        }
-
-        .select2-selection,
-        .select2-selection--single {
-            padding: 10px;
-            height: auto !important;
-        }
-
-        .select2-results__options li:first-child img {
-            display: none;
-        }
-
-        .img-flag {
-            float: left;
-        }
-
-        td,
-        .select2-results__options li span,
-        #select2-countries-container,
-        .select2-search__field,
-        .cardDiscribtion,
-        #shoroot li {
-            font-family: 'Frutiger LT Arabic 45 Light' !important;
-        }
-    </style>
+    <link rel="stylesheet" href="./styles/card.css">
     <title>بطاقات آمازون</title>
 </head>
 
@@ -157,6 +75,7 @@
                 </li>
             </ul>
         </div>
+
         <a href="" class="text-white d-lg-none mt-2" style="font-size: .9rem;">تـسـجـيـل الـدخـول <i
                 class="fa fa-shopping-cart fa bg-white p-1 rounded ml-2" style="color: #0090EB;"></i></a>
         <a class="navbar-brand ml-auto" href="#"><img width="150vw" src="./images/لوجو متجر السوادن - white@2x.png"
@@ -192,9 +111,35 @@
                 placeholder="بحث متجر السودان" aria-label="Username" aria-describedby="basic-addon1">
         </div>
     </nav>
-    <div class="row shadow rounded mt-4 mb-4 mr-3 ml-3 pb-4">
-        <div class="col-md text-right mt-4 border-right ">
-            <div class="form-group col border-bottom p-0 pb-4">
+    <ul class="nav shadow justify-content-end col-11 pt-2 pb-2 d-none d-lg-flex"
+        style=" background-color:#0090EB; left: 5%; right: 5%; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;">
+
+        <li class="nav-item mr-2 ml-5">
+            <button class="btn bg-light pl-4 pr-4 text-primary">تسجيــل</button>
+        </li>
+        <li class="nav-item mr-auto">
+            <button class="btn bg-light pl-4 pr-4 text-primary">تسجيل الدخول</button>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link font-weight-bold" href="#">إتصل بنا <i class="fa fa-envelope" aria-hidden="true"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link font-weight-bold" href="#">مشترياتي <i class="fa fa-shopping-cart"
+                    aria-hidden="true"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link font-weight-bold" href="#">من نحن <i class="fa fa-users" aria-hidden="true"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link font-weight-bold" href="#">الرئيسية <i class="fa fa-home" aria-hidden="true"></i></a>
+        </li>
+    </ul>
+    <div class="row shadow rounded mt-4 mb-4 mr-3 ml-3 pr-4 pl-4 pb-4 pt-0">
+        <div class="col-md text-right mt-5 border-right mt-4">
+            <div class="form-group col border-bottom p-0 pb-4 ">
                 <label class="col-12 p-0" style="font-size: 1.1rem;" for="countries"> :يرجى اختيار بلد البطاقة</label>
                 <select class="form-control col-9 p-5" id="countries">
                     <option class="d-none" selected>اختر بلد البطاقة</option>
@@ -206,7 +151,7 @@
                     <option value="AE" data-capital="AbuDabi">الامارات</option>
                 </select>
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-10 ml-auto">
                 <label style="font-size: 1.1rem;" for="">:يرجى اختيار قيمة البطاقة</label>
                 <table class="table text-center">
                     <thead>
@@ -242,8 +187,11 @@
                     </tbody>
                 </table>
             </div>
+            <div class="col-10 text-center ml-auto">
+                <button class="btn btn-primary" disabled>اتمام العملية الشرائية</button>
+            </div>
         </div>
-        <div class="col-md col text-right mt-4">
+        <div class="col-md col text-right mt-5">
             <p><a href="">الصفحة الرئيسية</a>/ <a href="">بطاقات التسوق عبر الانترنت</a>/ <a href="">أمازمن</a></p>
             <h3 class="pt-2 pb-2 pr-5 pl-5 text-white"
                 style="background-color:#0090EB; width: fit-content;float: right;">أمازمن</h3>
@@ -261,7 +209,7 @@
             </p>
         </div>
     </div>
-    <div class="shadow rounded mt-4 mb-4 mr-3 ml-3 pb-4 pt-4">
+    <div class="shadow rounded mt-4 mb-4 mr-3 ml-3 p-4">
         <h4 class="text-center ml-auto mr-auto pb-2" style="width: fit-content;border-bottom: 3px solid #0090EB;">الشروط
             والأحكام</h4>
         <div class="col text-right">
@@ -297,7 +245,7 @@
             </ul>
         </div>
     </div>
-    <footer class="container col-12 pl-4     pr-4">
+    <footer class="container col-12 p-4">
         <div class="row pb-4">
             <div class="col-md-6 col-lg-4 col-sm-12 mt-5">
                 <div class="col p-0">
