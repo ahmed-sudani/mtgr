@@ -108,6 +108,12 @@ li .is-active {
   bottom: 20%;
 }
 
+@media (max-width: 380px) {
+  .cardImage {
+    width: 100px!important;
+  }
+}
+
 @media (max-width: 992px) {
   .navbar-collapse {
     position: fixed;
