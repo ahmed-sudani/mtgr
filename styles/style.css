@@ -57,11 +57,11 @@ footer {
   display: block;
   position: relative;
   box-shadow: 0px 3pt 6pt #00000033;
-  /* background: url('./images/backgrounds/Header@3x.png'); */
+  background: url("../images/backgrounds/footer.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #0761a1;
+  /* background-color: #0761a1; */
   opacity: 0.99;
 }
 
@@ -110,7 +110,12 @@ li .is-active {
 
 @media (max-width: 380px) {
   .cardImage {
-    width: 100px!important;
+    width: 100px !important;
+  }
+}
+@media (max-width: 770px) {
+  .mainHeader{
+    background-size: 100% 100%!important;
   }
 }
 
@@ -122,9 +127,11 @@ li .is-active {
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 15px;
-    width: 75%;
+    width: 55%;
     height: 100%;
-    background-color: #2c6e9c !important;
+    background-image: url('../images/backgrounds/header.png');
+    background-size: contain;
+    /* background-color: #2c6e9c !important; */
   }
 
   .navbar-collapse.collapsing {

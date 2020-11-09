@@ -19,7 +19,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark d-lg-none p-0">
         <div class="collapse navbar-collapse bg-dark p-0" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto text-right pr-3">
+            <ul class="navbar-nav mr-auto text-right">
                 <li class="nav-item text-left">
                     <a data-toggle="collapse" data-target="#navbarCollapse" style="width: fit-content;"
                         class="nav-link font-weight-bold" href="#"><i
@@ -27,28 +27,53 @@
                             aria-hidden="true"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link font-weight-bold" href="#">الرئيسية <i class="fa fa-home fa-lg"
+                    <a class="nav-link font-weight-bold pr-3" href="#">الرئيسية <i class="fa fa-home fa-lg"
                             aria-hidden="true"></i></a>
                 </li>
                 <li class="nav-item border-top">
-                    <a class="nav-link font-weight-bold" href="#">من نحن <i class="fa fa-users fa-lg"
+                    <a class="nav-link font-weight-bold pr-3" href="#">من نحن <i class="fa fa-users fa-lg"
                             aria-hidden="true"></i>
                     </a>
                 </li>
                 <li class="nav-item border-top">
-                    <a class="nav-link font-weight-bold" href="#">مشترياتي <i class="fa fa-shopping-cart fa-lg"
+                    <a class="nav-link font-weight-bold pr-3" href="#">مشترياتي <i class="fa fa-shopping-cart fa-lg"
                             aria-hidden="true"></i>
                     </a>
                 </li>
                 <li class="nav-item border-top border-bottom">
-                    <a class="nav-link font-weight-bold" href="#">إتصل بنا <i class="fa fa-envelope fa-lg"
+                    <a class="nav-link font-weight-bold pr-3" href="#">إتصل بنا <i class="fa fa-envelope fa-lg"
                             aria-hidden="true"></i>
                     </a>
                 </li>
             </ul>
+            <span style="position: absolute;bottom: 0px;">
+                <div class="col mt-2 text-white">
+                    <h5 style="text-align: end; font-size: 1rem;">... تابعونا</h5>
+                </div>
+                <div class="col text-right">
+                    <i style=" padding: 5px;color: rgb(255, 255, 255);" class="fa fa-facebook fa-sm"
+                        aria-hidden="true"></i>
+                    <i style="padding: 5px; color: rgb(255, 255, 255);" class="fa fa-twitter fa-sm"
+                        aria-hidden="true"></i>
+                    <i style="padding: 5px; color: rgb(255, 255, 255);" class="fa fa-instagram fa-sm"
+                        aria-hidden="true"></i>
+                    <i style="padding: 5px; color: rgb(255, 255, 255);" class="fa fa-telegram fa-sm"
+                        aria-hidden="true"></i>
+                    <i style="padding: 5px;  color: rgb(255, 255, 255);" class="fa fa-youtube fa-sm"
+                        aria-hidden="true"></i>
+                    <i style="padding: 5px;  color: rgb(255, 255, 255);" class="fa fa-whatsapp fa-sm"
+                        aria-hidden="true"></i>
+                    <i style="padding: 5px; color: rgb(255, 255, 255);" class="fa fa-envelope fa-sm"
+                        aria-hidden="true"></i>
+                    <i style="padding: 5px;  color: rgb(255, 255, 255);" class="fa fa-snapchat fa-sm"
+                        aria-hidden="true"></i>
+
+                </div>
+            </span>
         </div>
     </nav>
-    <nav class="navbar navbar-expand-lg" style="background-color: #0761a1;">
+    <nav class="navbar navbar-expand-lg mainHeader"
+        style="background-image: url('./images/backgrounds/header.png');background-repeat: no-repeat;background-size: cover">
         <div class="d-none d-lg-block">
             <ul class="nav col-12 justify-content-between" id="sm">
                 <li class="nav-item rounded mr-2"
@@ -229,8 +254,8 @@
                 <li>عمليات ارجاع البطاقات أو النقود غير مسموحة.</li>
                 <li>في حالة حدوث خلاف لأي سبب كان, أنت تعفي المتجر السوداني (وشركاءها وتابعيها وموظفيها وعملاءها) من أية
                     مسؤولية متعلقة بالخلاف. </li>
-                <p class="mt-4 p-0">لمزيد من المعلومات, يرجى زيارة صفحة <a href="">الشروط والأحكام</a></p>
             </ol>
+            <p class="mt-4 p-0">لمزيد من المعلومات, يرجى زيارة صفحة <a href="">الشروط والأحكام</a></p>
         </div>
     </div>
     <div class="splide"
@@ -333,33 +358,6 @@
         $('#slideMenue').show()
     })
 </script>
-<!-- <script>
-    function format(item, state) {
-  if (!item.id) {
-    return item.text;
-  }
-  var countryUrl = "https://hatscripts.github.io/circle-flags/flags/";
-  var stateUrl = "https://oxguy3.github.io/flags/svg/us/";
-  var url = state ? stateUrl : countryUrl;
-  var img = $("<img>", {
-    class: "img-flag",
-    width: 26,
-    src: url + item.element.value.toLowerCase() + ".svg"
-  });
-  var span = $("<span>", {
-    text: " " + item.text
-  });
-  span.prepend(img);
-  return span;
-}
-
-$(document).ready(function() {
-  $("#countries").select2({
-    templateResult: function(item) {
-      return format(item, false);
-    }
-  });
-</script> -->
 <script>
     function format(item, state) {
         if (!item.id) {
