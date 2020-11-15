@@ -493,12 +493,12 @@
                     newCard.id = $("#enCardName").text() + rootEle.firstElementChild.innerText + $("#countries").val()
                     newCard.paidPrice = rootEle.firstElementChild.nextElementSibling.innerText
 
-                    if (el[0].value == 0) {
-                        totalCardsPrice = 0
-                    }
-                    else
-                        totalCardsPrice -= parseInt(newCard.paidPrice.replace("$", ""))
-                    $("#totalPrice").text(`$${totalCardsPrice}`)
+                    // if (el[0].value == 0) {
+                    //     totalCardsPrice = 0
+                    // }
+                    // else
+                    //     totalCardsPrice -= parseInt(newCard.paidPrice.replace("$", ""))
+                    // $("#totalPrice").text(`$${totalCardsPrice}`)
 
 
                     const cardIndex = foundInCards(newCard.id)
@@ -534,8 +534,8 @@
                     newCard.country = $("#countries option:selected").text();
                     const cardIndex = foundInCards(newCard.id)
 
-                    totalCardsPrice += parseInt(newCard.paidPrice.replace("$", ""))
-                    $("#totalPrice").text(`$${totalCardsPrice}`)
+                    // totalCardsPrice += parseInt(newCard.paidPrice.replace("$", ""))
+                    // $("#totalPrice").text(`$${totalCardsPrice}`)
 
                     if (cardIndex >= 0) {
                         console.log("OKKK");
