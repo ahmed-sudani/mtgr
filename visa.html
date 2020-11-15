@@ -33,7 +33,7 @@
             display: none;
         }
     </style>
-    <title>بطاقات آمازون</title>
+    <title>بطاقات بيرفكت موني</title>
 </head>
 
 <body ng-controller="card">
@@ -194,7 +194,7 @@
             <span id="enCardName" class="d-none">amazon</span>
             <img hidden id="cardIcon" src="./images/icons/iconfinder_social_media_social_media_logo_amazon_2993797.svg"
                 alt="">
-            <img class="bg-dark mt-4" width="80%" src="./images/icons/iconfinder-icon.svg" alt="">
+            <img class="mt-5" width="350px" align="right" src="./images/icons/visa.svg" alt="">
             <p class="cardDiscribtion mt-2" dir="rtl">
                 <a href="https://www.amazon.com">https://www.amazon.com</a><br>
                 أمازون.كوم ويسمى أيضا أمازون (Amazon.com)‏، موقع للتجارة الإلكترونية والحوسبة السحابية
@@ -531,8 +531,6 @@
                     $("#totalPrice").text(`$${totalCardsPrice}`)
 
                     if (cardIndex >= 0) {
-                        console.log("OKKK");
-
                         updateCard(cardIndex, el[0].value)
                         return;
                     }
@@ -589,9 +587,6 @@
             cards: cards
         }
         localStorage.setItem("cards", JSON.stringify(myCards))
-        setTimeout(() => {
-            location.assign("/shoppingCart.html")
-        }, 2000)
     })
     $("#countries").on("change", function (e) {
         if (e.target.value === "0") {

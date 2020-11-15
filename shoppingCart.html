@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="mtgr">
 
 <head>
     <meta charset="UTF-8">
@@ -11,6 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/card.css">
     <style>
@@ -35,6 +36,10 @@
             display: block;
         }
 
+        .splide__arrow {
+            top: 65%;
+        }
+
         @media (max-width: 680px) {
 
             .input-number-increment,
@@ -52,7 +57,7 @@
     <title>سلة المشتريات</title>
 </head>
 
-<body>
+<body ng-controller="shoppingCart">
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark d-lg-none p-0">
         <div class="collapse navbar-collapse bg-dark p-0" id="navbarCollapse">
             <ul class="navbar-nav mr-auto text-right">
@@ -177,7 +182,7 @@
         </div>
     </nav>
     <ul class="nav shadow justify-content-end col-11 pt-2 pb-2 d-none d-lg-flex"
-        style=" background-color:#0090EB; left: 5%; right: 5%; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;">
+        style=" background-color:#0090EB; left: 4.5%; right: 5%; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;">
 
         <li class="nav-item mr-2 ml-5">
             <button class="btn bg-light pl-4 pr-4 text-primary">تسجيــل</button>
@@ -202,73 +207,71 @@
             <a class="nav-link font-weight-bold" href="#">الرئيسية <i class="fa fa-home" aria-hidden="true"></i></a>
         </li>
     </ul>
-    <div class="container col-lg-10 col-sm-12 rounded mt-4 p-0">
-        <div class="shadow-sm col pb-4 pt-4">
+    <div class="container shadow col-11 rounded mt-4 ">
+        <div class="rounded border-bottom col pb-4 pt-4">
             <h3 class="text-right col-12 ml-auto mr-auto p-2 p-0"> <i style="color: #0090EB;"
                     class="fa fa-shopping-cart" aria-hidden="true"></i> سلة <span>المشتريات</span>
             </h3>
             <div class="row">
                 <div class="col mt-3">
                     <i class="fa fa-trash fa-lg mt-2 text-danger" aria-hidden="true"></i>
-                    <a class="sm-text text-danger" href="">تفريغ سلة المشتريات</a>
+                    <a class="sm-text text-danger" ng-click="cards = []" onclick="localStorage.removeItem('cards');"
+                        href="">تفريغ سلة
+                        المشتريات</a>
                 </div>
-                <div class="input-group mt-3 col-6 ml-auto">
+                <div class="col mt-3">
+                    <i class="fa fa-save fa-lg mt-2 text-primary" aria-hidden="true"></i>
+                    <a class="sm-text" href="">تحديث محتويات السلة</a>
+                </div>
+                <div class="input-group mt-3 col-lg-6 ml-auto">
                     <input style="height: 40px;" dir="rtl" type="text" class="form-control sm-text text-right"
-                        placeholder="ابحث عن بطاقة" aria-label="Username" aria-describedby="basic-addon1">
+                        placeholder="ابحث عن بطاقة" ng-model="filter" aria-label="Username"
+                        aria-describedby="basic-addon1">
                 </div>
             </div>
         </div>
-        <div class="form-group col-12 ml-auto p-0 ml-auto mr-auto">
+        <div class="form-group col-12 ml-auto pb-4 mt-4 rounded ml-auto mr-auto">
             <div class="table-wrapper-scroll-y my-custom-scrollbar">
                 <table class="table text-right" style="border-collapse: separate; border-spacing:1em;">
                     <thead>
-                        <tr>
+                        <tr ng-show="(cards | filter : findCard).length != 0">
+                            <th></th>
                             <th scope="col">الكمية</th>
                             <th scope="col">السعر</th>
-                            <th scope="col">القيمة</th>
+                            <th class="d-none d-sm-block" scope="col">القيمة</th>
                             <th scope="col">البلد</th>
                             <th scope="col">البطاقة</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="shadow-sm rounded">
-                            <td><i class="fa fa-trash fa mt-2 text-danger" style=" float: left;"
-                                    aria-hidden="true"></i><span class="input-number-decrement">–</span><input
-                                    class="input-number" id="input-number1" type="text" value="0" min="0" max="10"><span
-                                    class="input-number-increment">+</span></td>
-                            <td>$10</td>
-                            <td>$10</td>
-                            <td>السوادن</td>
-                            <td>كاش يو
-                                <img width="50px" src="./images/icons/cashu@1X.png" alt="">
+                        <h1 ng-show="!cards.length" class="text-center text-info"> السلة فارغة قم بتعبئة السلة من الصفحة
+                            الرئيسية</h1>
+                        <h1 class="text-center text-info"
+                            ng-show="(cards | filter : findCard).length == 0 && cards.length">لا توجد
+                            نتائج مطابقة</h1>
+                        <tr ng-repeat="card in cards  | filter : findCard" class="shadow-sm">
+                            <td><i class="fa fa-trash fa mt-2 text-danger" ng-click="deleteItem($index, card.id)"
+                                    style=" float: left;cursor: pointer;" aria-hidden="true"></i>
                             </td>
-                        </tr>
-                        <tr class="shadow-sm rounded">
-                            <td><i class="fa fa-trash fa mt-2 text-danger" style=" float: left;"
-                                    aria-hidden="true"></i><span class="input-number-decrement">–</span><input
-                                    class="input-number" id="input-number2" type="text" value="0" min="0" max="10"><span
-                                    class="input-number-increment">+</span>
+                            <td class="pl-0">
+                                <select class="custom-select" style="width: 100px;" name="" id="">
+                                    <option ng-selected="card.count == 1" value="1">1</option>
+                                    <option ng-selected="card.count == 2" value="2">2</option>
+                                    <option ng-selected="card.count == 3" value="3">3</option>
+                                    <option ng-selected="card.count == 4" value="4">4</option>
+                                    <option ng-selected="card.count == 5" value="5">5</option>
+                                    <option ng-selected="card.count == 6" value="6">6</option>
+                                    <option ng-selected="card.count == 7" value="7">7</option>
+                                    <option ng-selected="card.count == 8" value="8">8</option>
+                                    <option ng-selected="card.count == 9" value="9">9</option>
+                                    <option ng-selected="card.count == 10" value="10">10</option>
+                                </select>
                             </td>
-                            <td>$100</td>
-                            <td>$100</td>
-                            <td>عالمي</td>
-                            <td>فيزا
-                                <img width="50px" src="./images/icons/visa@1X.png" alt="">
-                            </td>
-                        </tr>
-                        <tr class="shadow-sm rounded">
-                            <td><i class="fa fa-trash fa mt-2 text-danger" style=" float: left;"
-                                    aria-hidden="true"></i><span class="input-number-decrement">–</span><input
-                                    class="input-number" id="input-number3" type="text" value="0" min="0" max="10"><span
-                                    class="input-number-increment">+</span>
-                            </td>
-                            <td>$30</td>
-                            <td>$30</td>
-                            <td>عالمي</td>
-                            <td>امازون
-                                <img width="50px"
-                                    src="./images/icons/iconfinder_social_media_social_media_logo_amazon_2993797.svg"
-                                    alt="">
+                            <td>{{card.paidPrice}}</td>
+                            <td class="d-none d-md-block">{{card.cardPrice}}</td>
+                            <td>{{card.country}}</td>
+                            <td>{{card.cardName}}
+                                <img width="50px" src="{{card.cardIcon}}" alt="">
                             </td>
                         </tr>
                     </tbody>
@@ -276,21 +279,28 @@
                 </table>
 
             </div>
-            <div class="col text-center mb-2">
-                <button class="btn btn-primary">اتمام العملية الشرائية</button>
-            </div>
+            <span ng-show="(cards | filter : findCard).length != 0">
+                <!-- <div class="col text-center mb-2">
+                    <button ng-disabled="!cards.length" class="btn btn-primary"> حفظ السلة</button>
+                </div> -->
+                <div class="col text-center mb-2 mt-4">
+                    <button ng-disabled="!cards.length" class="btn btn-primary">اتمام العملية الشرائية</button>
+                </div>
+            </span>
         </div>
     </div>
-    <div class="splide d-none d-md-block shadow mb-4 col ml-auto mr-auto mt-5" style="padding: 20px;">
-        <div class="splide__track ml-auto mr-auto col-lg-10 col-sm-12 ">
-            <h3 class="text-center mb-5">بطاقات اخرى</h3>
+    <div class="splide d-none d-md-block shadow rounded mb-4 col-11 ml-auto mr-auto mt-5" style="padding: 20px;">
+        <div class="splide__track ml-auto mr-auto col-11">
+            <h3 class="text-center border-bottom pb-3 mb-5">بطاقات اخرى</h3>
             <ul class="splide__list text-center">
-                <li class="splide__slide bg-dark mr-2 rounded p-5"><img width="200px"
+
+                <li class="splide__slide pt-5 bg-dark mr-1 rounded"><img src="./images/icons/mastercard@1X.png" alt="">
+                </li>
+                <li class="splide__slide bg-dark mr-1 rounded p-5"><img width="100%"
                         src="./images/icons/iconfinder-icon.svg" alt="">
                 </li>
-                <li class="splide__slide p-5 bg-dark mr-2 rounded"><img src="./images/icons/mastercard@1X.png" alt="">
-                </li>
-                <li class="splide__slide p-5 bg-dark mr-2 rounded"><img src="./images/icons/visa@1X.png" alt=""></li>
+                <li class="splide__slide pt-5 bg-dark mr-1 rounded"><img width="80%" src="./images/icons/pngegg.png"
+                        alt=""></li>
             </ul>
         </div>
     </div>
@@ -365,55 +375,10 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script>
-        (function () {
-
-            window.inputNumber = function (el) {
-
-                var min = el.attr('min') || false;
-                var max = el.attr('max') || false;
-
-                var els = {};
-
-                els.dec = el.prev();
-                els.inc = el.next();
-
-                el.each(function () {
-                    init($(this));
-                });
-
-                function init(el) {
-
-                    els.dec.on('click', decrement);
-                    els.inc.on('click', increment);
-
-                    function decrement() {
-                        var value = el[0].value;
-                        value--;
-                        if (!min || value >= min) {
-                            el[0].value = value;
-                        }
-                    }
-
-                    function increment() {
-                        var value = el[0].value;
-                        value++;
-                        if (!max || value <= max) {
-                            el[0].value = value++;
-                        }
-                    }
-                }
-            }
-        })();
-
-        inputNumber($('#input-number1'));
-        inputNumber($('#input-number2'));
-        inputNumber($('#input-number3'));
-    </script>
-    <script>
         new Splide('.splide', {
-            fixedWidth: '25vw',
-            type: 'loop',
-            perPage: 4,
+            fixedWidth: '26vw',
+            // type: 'loop',
+            perPage: 3,
             perMove: 1,
             autoplay: true,
         }).mount();
@@ -422,14 +387,79 @@
         })
     </script>
     <script>
-        $(document).ready(function () {
-            $('#dtDynamicHorzentalScrollExample').DataTable({
-                "scrollY": "50vh",
-                "scrollCollapse": true,
-            });
-            $('.dataTables_length').addClass('bs-select');
-        });
+        let localStorageCards = JSON.parse(localStorage.getItem("cards"))
+        let cards
+        if (localStorageCards) {
+            cards = localStorageCards.cards
+        } else {
+            cards = []
+        }
     </script>
+    <script>
+        angular.module('mtgr', [])
+            .controller('shoppingCart', async ($scope, $http) => {
+                $scope.cards = cards
+                $scope.findCard = function (card) {
+                    return card.cardName.search($scope.filter) != -1
+                        || card.country.search($scope.filter) != -1
+                        || card.cardPrice.search($scope.filter) != -1
+                        || card.paidPrice.search($scope.filter) != -1
+                        || !$scope.filter;
+                }
+
+                $scope.deleteItem = (index, id) => {
+                    console.log(cards);
+                    cards.splice(index, 1)
+                    // $scope.cards.splice(index, 1)
+                    console.log(cards);
+                }
+            })
+    </script>
+    <script>
+            (function () {
+
+                window.inputNumber = function (el) {
+
+                    var min = el.attr('min') || false;
+                    var max = el.attr('max') || false;
+
+                    var els = {};
+
+                    els.dec = el.prev();
+                    els.inc = el.next();
+
+                    el.each(function () {
+                        init($(this));
+                    });
+
+                    function init(el) {
+
+                        els.dec.on('click', decrement);
+                        els.inc.on('click', increment);
+
+                        function decrement() {
+                            var value = el[0].value;
+                            value--;
+                            if (!min || value >= min) {
+                                el[0].value = value;
+                            }
+                        }
+
+                        function increment() {
+                            var value = el[0].value;
+                            value++;
+                            if (!max || value <= max) {
+                                el[0].value = value++;
+                            }
+                        }
+                    }
+                }
+            })();
+        inputNumber($('#input-number1'));
+        inputNumber($('#input-number2'));
+        inputNumber($('#input-number3'));
+    </script>
+
 </body>
 
 </html>

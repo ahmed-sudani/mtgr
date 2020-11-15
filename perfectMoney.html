@@ -33,7 +33,7 @@
             display: none;
         }
     </style>
-    <title>بطاقات آمازون</title>
+    <title>بطاقات بيرفكت موني</title>
 </head>
 
 <body ng-controller="card">
@@ -188,23 +188,22 @@
     </ul>
     <div class="row shadow col-11 rounded mt-4 mb-4 mr-auto ml-auto pb-4">
         <div class="col-md col text-right mt-5 order-md-last">
-            <p><a href="">الصفحة الرئيسية</a>/ <a href="">بطاقات التسوق عبر الانترنت</a>/ <a>أمازون</a></p>
+            <p><a href="">الصفحة الرئيسية</a>/ <a href="">بطاقات التسوق عبر الانترنت</a>/ <a>بيرفكت فومني</a></p>
             <h3 class="pt-2 pb-2 pr-5 pl-5 text-white" id="cardName"
-                style="background-color:#0090EB; width: fit-content;float: right;">أمازمن</h3>
-            <span id="enCardName" class="d-none">amazon</span>
-            <img hidden id="cardIcon" src="./images/icons/iconfinder_social_media_social_media_logo_amazon_2993797.svg"
-                alt="">
-            <img class="bg-dark mt-4" width="80%" src="./images/icons/iconfinder-icon.svg" alt="">
+                style="background-color:#0090EB; width: fit-content;float: right;">بيرفكت موني</h3>
+            <span id="enCardName" class="d-none">perfectmoney</span>
+            <!-- <img hidden  src="./images/icons/iconfinder_social_media_social_media_logo_amazon_2993797.svg"
+                alt=""> -->
+            <img class="mt-4" width="100%" id="cardIcon" src="./images/icons/hiclipart.com.png" alt="">
             <p class="cardDiscribtion mt-2" dir="rtl">
-                <a href="https://www.amazon.com">https://www.amazon.com</a><br>
-                أمازون.كوم ويسمى أيضا أمازون (Amazon.com)‏، موقع للتجارة الإلكترونية والحوسبة السحابية
-                ، وهو أكبر متاجر التجزئة القائمة على الإنترنت
-                في العالم من حيث إجمالي المبيعات والقيمة السوقية. يمكنك أمازون من شراء المنتجات بأحدث اصدارتها من
-                الأجهزة الالكترونية والكتب الورقية, والأزياء, ومعدات التصوير ,والاثاثات .. مع خدمة التوصيل الي المنزل .
+                <a href="https://perfectmoney.com/">https://perfectmoney.com</a><br>
+                يعتبر Perfect Money من البنوك الإلكترونية المشهورة حيث يقدم هذا الاخير خدمة مالية جيدة تمكن مستخدمية من
+                الدفع الفوري و تحويل الأموال بأمان عن طريق الانترنت متيحة فرص فريدة لعملائها من مستخدمي الإنترنت و أصحاب
+                المشاريع على السواء. هدفه ان يجعل تحويل الأموال من خلال الانترنت هو الحل المثالي. من أهم ميزات هذا البنك
+                هو انه يجمع بين الأمان متعدد المستويات و النظام الذي يتمتع بالبساطة والسهولة في استخدامه.
             </p>
             <p dir="rtl" class="cardDiscribtion mt-2">
-                بامكانك الشراء من أمازون عن طريق بطاقات أمازون الالكترونية, يقوم متجر السوادن للدفع الالكتروني بتوفير
-                بطاقات أمازمن الالكترونية بمختلف القيم .
+                يقوم متجر السوادن للدفع الالكتروني بتوفير بطاقات Perfec Money الالكترونية بمختلف القيم.
             </p>
         </div>
         <div class="col-md text-right mt-5 border-right mt-4">
@@ -290,7 +289,8 @@
                 </li>
                 <li class="splide__slide pt-5 bg-dark mr-1 rounded"><img src="./images/icons/mastercard@1X.png" alt="">
                 </li>
-                <li class="splide__slide pt-5 bg-dark mr-1 rounded"><img src="./images/icons/visa@1X.png" alt=""></li>
+                <li class="splide__slide pt-5 bg-dark mr-1 rounded"><img width="80%" src="./images/icons/pngegg.png"
+                        alt=""></li>
             </ul>
         </div>
     </div>
@@ -532,7 +532,6 @@
 
                     if (cardIndex >= 0) {
                         console.log("OKKK");
-
                         updateCard(cardIndex, el[0].value)
                         return;
                     }

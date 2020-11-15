@@ -28,12 +28,8 @@
         .splide__arrow {
             top: 65%;
         }
-
-        .select2-results__options li:nth-child(2) img {
-            display: none;
-        }
     </style>
-    <title>بطاقات آمازون</title>
+    <title>بطاقات كاش يو</title>
 </head>
 
 <body ng-controller="card">
@@ -188,23 +184,24 @@
     </ul>
     <div class="row shadow col-11 rounded mt-4 mb-4 mr-auto ml-auto pb-4">
         <div class="col-md col text-right mt-5 order-md-last">
-            <p><a href="">الصفحة الرئيسية</a>/ <a href="">بطاقات التسوق عبر الانترنت</a>/ <a>أمازون</a></p>
+            <p><a href="">الصفحة الرئيسية</a>/ <a href="">بطاقات التسوق عبر الانترنت</a>/ <a>كاش يو</a></p>
             <h3 class="pt-2 pb-2 pr-5 pl-5 text-white" id="cardName"
-                style="background-color:#0090EB; width: fit-content;float: right;">أمازمن</h3>
-            <span id="enCardName" class="d-none">amazon</span>
-            <img hidden id="cardIcon" src="./images/icons/iconfinder_social_media_social_media_logo_amazon_2993797.svg"
-                alt="">
-            <img class="bg-dark mt-4" width="80%" src="./images/icons/iconfinder-icon.svg" alt="">
+                style="background-color:#0090EB; width: fit-content;float: right;">كاش يو</h3>
+            <span id="enCardName" class="d-none">cashu</span>
+            <img hidden id="cardIcon" src="./images/icons/cashu.png" alt="">
+            <img class="mt-4" width="80%" src="./images/icons/pngegg.png" alt="">
             <p class="cardDiscribtion mt-2" dir="rtl">
-                <a href="https://www.amazon.com">https://www.amazon.com</a><br>
-                أمازون.كوم ويسمى أيضا أمازون (Amazon.com)‏، موقع للتجارة الإلكترونية والحوسبة السحابية
-                ، وهو أكبر متاجر التجزئة القائمة على الإنترنت
-                في العالم من حيث إجمالي المبيعات والقيمة السوقية. يمكنك أمازون من شراء المنتجات بأحدث اصدارتها من
-                الأجهزة الالكترونية والكتب الورقية, والأزياء, ومعدات التصوير ,والاثاثات .. مع خدمة التوصيل الي المنزل .
+                <a href="https://www.cashu.com/">https://www.cashu.com</a> <br>
+                شركة كاش يو (CASHU) هي محفظة إلكترونية تسمح للمستخدم بالدفع وتحويل المال عبر الإنترنت، وإصدار بطاقات
+                ماستركارد الافتراضية والبلاستيكية مسبقة الدفع. وقد تم تأسيس الشركة من قبل شركة مكتوب ("مجموعة جبار
+                للإنترنت" حالياً)، ويقع مقرها الرئيسي في مدينة دبي في الإمارات العربية المتحدة.
+                تُعد كاش يو الأولى والرائدة في منطقة الشرق الأوسط وشمال أفريقيا في مجال التكنولوجيا المالية، بخدمتها
+                أكثر من 2.5 مليون مستخدم في المنطقة، وتوفرها لدى أكثر من 7,000 متجر إلكتروني، وأكثر من 300,000 نقطة بيع
+                لشحن رصيد المحفظة الإلكترونية، مما يساعد التجار على تطوير أعمالهم والوصول لملايين المشترين على الإنترنت
+                في منطقة الشرق الأوسط وشمال أفريقيا.
             </p>
             <p dir="rtl" class="cardDiscribtion mt-2">
-                بامكانك الشراء من أمازون عن طريق بطاقات أمازون الالكترونية, يقوم متجر السوادن للدفع الالكتروني بتوفير
-                بطاقات أمازمن الالكترونية بمختلف القيم .
+                يقوم متجر السوادن للدفع الالكتروني بتوفير بطاقات كاش يو الالكترونية بمختلف القيم.
             </p>
         </div>
         <div class="col-md text-right mt-5 border-right mt-4">
@@ -212,7 +209,12 @@
                 <label class="col-12 p-0" style="font-size: 1.1rem;" for="countries"> :يرجى اختيار بلد البطاقة</label>
                 <select name="country" class="form-control col-9 p-5" id="countries">
                     <option value="0" class="d-none" selected>اختر بلد البطاقة</option>
-                    <option value="WW">عالمي</option>
+                    <option value="SD" data-capital="Khartoum">السوادن</option>
+                    <option value="EG" data-capital="Cairo">مصر</option>
+                    <option value="JO" data-capital="Tirana">الاردن</option>
+                    <option value="IR" data-capital="Algiers">العراق</option>
+                    <option value="SA" data-capital="Riad">المملكة العربية السعودية</option>
+                    <option value="AE" data-capital="AbuDabi">الامارات</option>
                 </select>
             </div>
             <div class="form-group col-md-10 ml-auto p-0">
@@ -399,13 +401,15 @@
         if (!item.id) {
             return item.text;
         }
-        let url = "https://hatscripts.github.io/circle-flags/flags/";
-        let img = $("<img>", {
+        var countryUrl = "https://hatscripts.github.io/circle-flags/flags/";
+        var stateUrl = "https://oxguy3.github.io/flags/svg/us/";
+        var url = state ? stateUrl : countryUrl;
+        var img = $("<img>", {
             class: "img-flag",
             width: 26,
             src: url + item.element.value.toLowerCase() + ".svg"
         });
-        let span = $("<span>", {
+        var span = $("<span>", {
             text: " " + item.text
         });
         span.prepend(img);
@@ -532,7 +536,6 @@
 
                     if (cardIndex >= 0) {
                         console.log("OKKK");
-
                         updateCard(cardIndex, el[0].value)
                         return;
                     }
