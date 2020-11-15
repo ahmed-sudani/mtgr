@@ -93,7 +93,7 @@
                     <a class="nav-link"><img width="50px" src="./images/icons/perfect@1X.png" alt=""></a>
                 </li>
                 <li class="nav-item rounded" style="background-image: linear-gradient(to bottom, #FFFFFF, #E3E3E3);">
-                    <a class="nav-link"><img width="50px" src="./images/icons/cashu@1X.png" alt=""></a>
+                    <a class="nav-link"><img width="50px" src="./images/icons/pngegg.png" width="150px" alt=""></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" style="color: white!important;">نـحـن نـقـبـل</a>
@@ -258,7 +258,7 @@
                         <img src="./images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
                     </div>
                     <div class="col text-center mt-5">
-                        <img class="cardImage" src="./images/icons/cashu@1X.png" alt="">
+                        <img class="cardImage" src="./images/icons/pngegg.png" width="150px" alt="">
                     </div>
                 </div>
             </div>
@@ -297,7 +297,7 @@
                         <img src="./images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
                     </div>
                     <div class="col text-center mt-5">
-                        <img class="cardImage" src="./images/icons/cashu@1X.png" alt="">
+                        <img class="cardImage" width="70%" src="./images/icons/pngegg.png" alt="">
                     </div>
                 </div>
             </div>
@@ -325,12 +325,16 @@
             </div>
             <div class="col">
                 <div class="shadow p-3 mb-5 bg-gray rounded"
-                    style="height: 200px; padding: 0%!important; background-image: linear-gradient(to bottom, #FFFFFF, #EEEDEB); box-shadow: -1pt 0px 6pt #00000029; ">
+                    style="height: 200px;position: relative; padding: 0%!important; background-image: linear-gradient(to bottom, #FFFFFF, #EEEDEB); box-shadow: -1pt 0px 6pt #00000029; ">
                     <div class="col text-center">
                         <img src="./images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
                     </div>
                     <div class="col text-center mt-5">
                         <img class="cardImage" src="./images/icons/paypal@1X.png" alt="">
+                    </div>
+                    <div class="col bg-primary p-2 mt-3 rounded text-white text-center" style="position: absolute;bottom: 0%;cursor: pointer;">
+                        <i class="fa fa-shopping-cart rounded fa-lg bg-white text-primary p-2" aria-hidden="true"></i>
+                        اشتري الآن
                     </div>
                 </div>
             </div>
@@ -355,7 +359,7 @@
                         <img src="./images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
                     </div>
                     <div class="col text-center mt-5">
-                        <img class="cardImage" src="./images/icons/cashu@1X.png" alt="">
+                        <img class="cardImage" src="./images/icons/pngegg.png" width="150px" alt="">
                     </div>
                 </div>
             </div>
@@ -413,7 +417,7 @@
                         <img src="./images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
                     </div>
                     <div class="col text-center mt-5">
-                        <img class="cardImage" src="./images/icons/cashu@1X.png" alt="">
+                        <img class="cardImage" src="./images/icons/pngegg.png" width="150px" alt="">
                     </div>
                 </div>
             </div>
@@ -470,7 +474,7 @@
                         <img src="./images/icons/rounded-rectangle@1X.png" class="mr-auto ml-auto mt-4" alt="">
                     </div>
                     <div class="col text-center mt-5">
-                        <img class="cardImage" src="./images/icons/cashu@1X.png" alt="">
+                        <img class="cardImage" src="./images/icons/pngegg.png" width="150px" alt="">
                     </div>
                 </div>
             </div>
@@ -515,7 +519,8 @@
             <ul class="splide__list text-center">
                 <li class="splide__slide"><img width="60px" height="25" src="./images/icons/bitcoin@1X.png" alt="">
                 </li>
-                <li class="splide__slide"><img width="60px" height="25" src="./images/icons/cashu@1X.png" alt=""></li>
+                <li class="splide__slide"><img width="60px" height="25" src="./images/icons/pngegg.png" width="150px"
+                        alt=""></li>
                 <li class="splide__slide"><img height="25" src="./images/icons/mastercard@1X.png" alt="">
                 </li>
                 <li class="splide__slide"><img width="60px" height="25" src="./images/icons/visa@1X.png" alt=""></li>
@@ -602,6 +607,8 @@
         type: 'loop',
         perPage: 3,
         perMove: 1,
+        autoplay: true,
+
     }).mount();
     $('#barsBtn').on("click", () => {
         $('#slideMenue').show()

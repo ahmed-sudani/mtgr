@@ -209,19 +209,23 @@
     </ul>
     <div class="container shadow col-11 rounded mt-4 ">
         <div class="rounded border-bottom col pb-4 pt-4">
-            <h3 class="text-right col-12 ml-auto mr-auto p-2 p-0"> <i style="color: #0090EB;"
-                    class="fa fa-shopping-cart" aria-hidden="true"></i> سلة <span>المشتريات</span>
+            <h3 class="text-right col-12 ml-auto mr-auto p-2 p-0"><span
+                    class="text-white rounded bg-primary pl-2 pr-2 p-1">{{cards.length}}</span> <i
+                    style="color: #0090EB;" class="fa fa-shopping-cart" aria-hidden="true"></i> سلة
+                <span>المشتريات</span>
             </h3>
             <div class="row">
                 <div class="col mt-3">
                     <i class="fa fa-trash fa-lg mt-2 text-danger" aria-hidden="true"></i>
-                    <a class="sm-text text-danger" ng-click="cards = []" onclick="localStorage.removeItem('cards');"
-                        href="">تفريغ سلة
+                    <a class="sm-text text-danger" ng-click="cards = []"
+                        onclick="localStorage.removeItem('cards');cards = []" href="">تفريغ سلة
                         المشتريات</a>
                 </div>
-                <div class="col mt-3">
-                    <i class="fa fa-save fa-lg mt-2 text-primary" aria-hidden="true"></i>
-                    <a class="sm-text" href="">تحديث محتويات السلة</a>
+                <div class="col mt-3" id="refresh">
+                    <i class="fa fa-refresh fa-lg mt-2 text-primary" aria-hidden="true"></i>
+                    <a class="sm-text" onclick="localStorage.setItem('cards', JSON.stringify({cards : cards}))
+                        location.reload()" href="">تحديث
+                        محتويات السلة</a>
                 </div>
                 <div class="input-group mt-3 col-lg-6 ml-auto">
                     <input style="height: 40px;" dir="rtl" type="text" class="form-control sm-text text-right"
@@ -249,12 +253,13 @@
                         <h1 class="text-center text-info"
                             ng-show="(cards | filter : findCard).length == 0 && cards.length">لا توجد
                             نتائج مطابقة</h1>
-                        <tr ng-repeat="card in cards  | filter : findCard" class="shadow-sm">
+                        <tr ng-repeat="card in cards | filter : findCard track by $index " class="shadow-sm">
                             <td><i class="fa fa-trash fa mt-2 text-danger" ng-click="deleteItem($index, card.id)"
                                     style=" float: left;cursor: pointer;" aria-hidden="true"></i>
                             </td>
                             <td class="pl-0">
-                                <select class="custom-select" style="width: 100px;" name="" id="">
+                                <select id="${{$index}}" onchange="numberChanged(this)" class="custom-select"
+                                    style="width: 100px;" name="">
                                     <option ng-selected="card.count == 1" value="1">1</option>
                                     <option ng-selected="card.count == 2" value="2">2</option>
                                     <option ng-selected="card.count == 3" value="3">3</option>
@@ -280,9 +285,6 @@
 
             </div>
             <span ng-show="(cards | filter : findCard).length != 0">
-                <!-- <div class="col text-center mb-2">
-                    <button ng-disabled="!cards.length" class="btn btn-primary"> حفظ السلة</button>
-                </div> -->
                 <div class="col text-center mb-2 mt-4">
                     <button ng-disabled="!cards.length" class="btn btn-primary">اتمام العملية الشرائية</button>
                 </div>
@@ -301,6 +303,21 @@
                 </li>
                 <li class="splide__slide pt-5 bg-dark mr-1 rounded"><img width="80%" src="./images/icons/pngegg.png"
                         alt=""></li>
+            </ul>
+        </div>
+    </div>
+    <div class="splide-sm d-sm-none shadow rounded mb-4 col-11 ml-auto mr-auto mt-5" style="padding: 20px;">
+        <div class="splide__track ml-auto mr-auto col-11">
+            <h3 class="text-center border-bottom pb-3 mb-5">بطاقات اخرى</h3>
+            <ul class="splide__list text-center row text-center">
+                <li class="splide__slide bg-dark mr-5 ml-5 rounded p-5"><img width="100%"
+                        src="./images/icons/iconfinder-icon.svg" alt="">
+                </li>
+                <li class="splide__slide pt-5 bg-dark mr-5 ml-5 rounded"><img src="./images/icons/mastercard@1X.png"
+                        alt="">
+                </li>
+                <li class="splide__slide pt-5 bg-dark mr-5 ml-5 rounded"><img width="80%"
+                        src="./images/icons/pngegg.png" alt=""></li>
             </ul>
         </div>
     </div>
@@ -377,10 +394,17 @@
     <script>
         new Splide('.splide', {
             fixedWidth: '26vw',
-            // type: 'loop',
             perPage: 3,
             perMove: 1,
             autoplay: true,
+        }).mount();
+        new Splide('.splide-sm', {
+            fixedWidth: '66.5vw',
+            perPage: 1,
+            perMove: 1,
+            autoplay: true,
+            type: 'loop',
+
         }).mount();
         $('#barsBtn').on("click", () => {
             $('#slideMenue').show()
@@ -408,56 +432,27 @@
                 }
 
                 $scope.deleteItem = (index, id) => {
-                    console.log(cards);
                     cards.splice(index, 1)
-                    // $scope.cards.splice(index, 1)
-                    console.log(cards);
+                }
+                $scope.cardCountChanged = (index) => {
+                    console.log(index);
                 }
             })
     </script>
     <script>
-            (function () {
-
-                window.inputNumber = function (el) {
-
-                    var min = el.attr('min') || false;
-                    var max = el.attr('max') || false;
-
-                    var els = {};
-
-                    els.dec = el.prev();
-                    els.inc = el.next();
-
-                    el.each(function () {
-                        init($(this));
-                    });
-
-                    function init(el) {
-
-                        els.dec.on('click', decrement);
-                        els.inc.on('click', increment);
-
-                        function decrement() {
-                            var value = el[0].value;
-                            value--;
-                            if (!min || value >= min) {
-                                el[0].value = value;
-                            }
-                        }
-
-                        function increment() {
-                            var value = el[0].value;
-                            value++;
-                            if (!max || value <= max) {
-                                el[0].value = value++;
-                            }
-                        }
-                    }
-                }
-            })();
-        inputNumber($('#input-number1'));
-        inputNumber($('#input-number2'));
-        inputNumber($('#input-number3'));
+        const updateCard = (id, value) => {
+            console.log(id);
+        }
+        function numberChanged(element) {
+            let index = element.id.replace("$", "")
+            cards[parseInt(index)].count = element.value
+            console.log(cards);
+        }
+        // let cardsCount = document.getElementsByClassName("custom-select")
+        // for (let index = 0; index < cardsCount.length; index++) {
+        //     const element = cardsCount[index];
+        //     console.log(element);
+        // }
     </script>
 
 </body>

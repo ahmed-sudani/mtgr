@@ -290,26 +290,25 @@
                 </li>
                 <li class="splide__slide pt-5 bg-dark mr-1 rounded"><img src="./images/icons/mastercard@1X.png" alt="">
                 </li>
-                <li class="splide__slide pt-5 bg-dark mr-1 rounded"><img src="./images/icons/visa@1X.png" alt=""></li>
+                <li class="splide__slide pt-5 bg-dark mr-1 rounded"><img width="50%" src="./images/icons/hiclipart.com.png" alt=""></li>
             </ul>
         </div>
     </div>
-    <!-- <div class="splide"
-        style="padding: 20px;background-color:#0090EB; background-image: linear-gradient(to bottom, #EEEDEB, #DEF0FC);">
-        <div class="splide__track ml-auto mr-auto col-lg-10 col-sm-12 ">
-            <ul class="splide__list text-center">
-                <li class="splide__slide"><img width="60px" height="25" src="./images/icons/bitcoin@1X.png" alt="">
+    <div class="splide-sm d-sm-none shadow rounded mb-4 col-11 ml-auto mr-auto mt-5" style="padding: 20px;">
+        <div class="splide__track ml-auto mr-auto col-11">
+            <h3 class="text-center border-bottom pb-3 mb-5">بطاقات اخرى</h3>
+            <ul class="splide__list text-center row text-center">
+                <li class="splide__slide bg-dark mr-5 ml-5 rounded p-5"><img width="100%"
+                        src="./images/icons/iconfinder-icon.svg" alt="">
                 </li>
-                <li class="splide__slide"><img width="60px" height="25" src="./images/icons/cashu@1X.png" alt=""></li>
-                <li class="splide__slide"><img height="25" src="./images/icons/mastercard@1X.png" alt="">
+                <li class="splide__slide pt-5 bg-dark mr-5 ml-5 rounded"><img src="./images/icons/mastercard@1X.png"
+                        alt="">
                 </li>
-                <li class="splide__slide"><img width="60px" height="25" src="./images/icons/visa@1X.png" alt=""></li>
-                <li class="splide__slide"><img width="60px" height="25" src="./images/icons/paypal@1X.png" alt=""></li>
-                <li class="splide__slide"><img width="60px" height="25" src="./images/icons/perfect@1X.png" alt="">
-                </li>
+                <li class="splide__slide pt-5 bg-dark mr-5 ml-5 rounded"><img width="80%"
+                        src="./images/icons/pngegg.png" alt=""></li>
             </ul>
         </div>
-    </div> -->
+    </div>
     <footer class="container col-12 p-4">
         <div class="row pb-4">
             <div class="col-md-6 col-lg-4 col-sm-12 mt-5">
@@ -389,6 +388,14 @@
         perPage: 3,
         perMove: 1,
         autoplay: true,
+    }).mount();
+    new Splide('.splide-sm', {
+        fixedWidth: '66.5vw',
+        perPage: 1,
+        perMove: 1,
+        autoplay: true,
+        type: 'loop',
+
     }).mount();
     $('#barsBtn').on("click", () => {
         $('#slideMenue').show()
