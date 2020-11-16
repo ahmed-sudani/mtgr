@@ -209,8 +209,8 @@
     </ul>
     <div class="container shadow col-11 rounded mt-4 ">
         <div class="rounded border-bottom col pb-4 pt-4">
-            <h3 class="text-right col-12 ml-auto mr-auto p-2 p-0"><span
-                    class="text-white rounded bg-primary pl-2 pr-2 p-1">{{cards.length}}</span> <i
+            <h3 class="text-right col-12 ml-auto mr-auto p-2 p-0">
+                <span class="text-white rounded bg-primary pl-2 pr-2 p-1">{{cards.length}}</span> <i
                     style="color: #0090EB;" class="fa fa-shopping-cart" aria-hidden="true"></i> سلة
                 <span>المشتريات</span>
             </h3>
@@ -254,7 +254,7 @@
                             ng-show="(cards | filter : findCard).length == 0 && cards.length">لا توجد
                             نتائج مطابقة</h1>
                         <tr ng-repeat="card in cards | filter : findCard track by $index " class="shadow-sm">
-                            <td><i class="fa fa-trash fa mt-2 text-danger" ng-click="deleteItem($index, card.id)"
+                            <td><i class="fa fa-trash fa mt-2 text-danger" ng-click="deleteItem(card.id)"
                                     style=" float: left;cursor: pointer;" aria-hidden="true"></i>
                             </td>
                             <td class="pl-0">
@@ -431,8 +431,12 @@
                         || !$scope.filter;
                 }
 
-                $scope.deleteItem = (index, id) => {
-                    cards.splice(index, 1)
+                $scope.deleteItem = (id) => {
+                    cards = cards.filter((v) => {
+                        console.log(v.id);
+                        return v.id != id
+                    })
+                    $scope.cards = cards
                 }
                 $scope.cardCountChanged = (index) => {
                     console.log(index);
